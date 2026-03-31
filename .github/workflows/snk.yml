@@ -1,4 +1,15 @@
-- uses: Platane/snk@v3
+name: snk
+
+  on:
+    schedule:
+      - cron: "0 0 * * *" # runs daily at midnight
+    workflow_dispatch: # manual trigger
+
+  jobs:
+    build:
+      runs-on: ubuntu-latest
+      steps:
+        - uses: Platane/snk@v3
   with:
     # github user name to read the contribution graph from (**required**)
     # using action context var `github.repository_owner` or specified user
