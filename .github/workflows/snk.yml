@@ -1,11 +1,11 @@
 name: snk
 
-  on:
-    schedule:
-      - cron: "0 0 * * *" # runs daily at midnight
-    workflow_dispatch: # manual trigger
+on:
+  schedule:
+    - cron: "0 0 * * *" # runs daily at midnight
+  workflow_dispatch: # manual trigger
 
-  jobs:
+jobs:
     build:
       runs-on: ubuntu-latest
       steps:
