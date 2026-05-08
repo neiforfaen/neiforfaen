@@ -1,0 +1,21 @@
+{
+	"$schema": "https://ui.shadcn.com/schema.json",
+	"style": "base-nova",
+	"rsc": false,
+	"tsx": true,
+	"tailwind": {
+		"config": "",
+		"css": "styles/globals.css",
+		"baseColor": "neutral",
+		"cssVariables": true,
+		"prefix": ""
+	},
+	"aliases": {
+		"components": "@neiforfaen/design-system/components",
+		"utils": "@neiforfaen/design-system/lib/utils",
+		"ui": "@neiforfaen/design-system/components/ui",
+		"lib": "@neiforfaen/design-system/lib",
+		"hooks": "@neiforfaen/design-system/hooks"
+	},
+	"iconLibrary": "lucide"
+}

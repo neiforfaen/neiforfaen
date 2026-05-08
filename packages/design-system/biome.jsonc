@@ -1,0 +1,8 @@
+{
+	"$schema": "https://biomejs.dev/schemas/2.4.14/schema.json",
+	"extends": ["@neiforfaen/biome-config/react-library"],
+	"root": false,
+	"files": {
+		"includes": ["**", "!**/styles/**/*"]
+	}
+}

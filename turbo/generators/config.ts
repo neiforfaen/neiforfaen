@@ -32,6 +32,11 @@ export default function generator(plop: PlopTypes.NodePlopAPI): void {
 				path: "packages/{{ name }}/tsconfig.json",
 				templateFile: "templates/tsconfig.json.hbs",
 			},
+			{
+				type: "add",
+				path: "packages/{{ name }}/biome.jsonc",
+				templateFile: "templates/biome.jsonc.hbs",
+			},
 		],
 	});
 }

@@ -1,8 +1,9 @@
 {
-	"extends": "@neiforfaen/typescript-config/base",
+	"extends": "@neiforfaen/typescript-config/react-library.json",
 	"compilerOptions": {
 		"ignoreDeprecations": "6.0",
 		"baseUrl": ".",
+		"jsx": "react-jsx",
 		"paths": {
 			"@/*": ["./*"],
 			"@neiforfaen/*": ["../../packages/*"]
