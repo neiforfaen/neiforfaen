@@ -1,23 +1,10 @@
 {
-  "$schema": "https://biomejs.dev/schemas/2.4.14/schema.json",
-  "extends": ["ultracite/biome/core", "ultracite/biome/react"],
-  "root": false,
-  "vcs": {
-    "enabled": true,
-    "clientKind": "git",
-    "useIgnoreFile": true
-  },
-  "javascript": {
-    "formatter": {
-      "semicolons": "asNeeded"
-    }
-  },
-  "assist": {
-    "enabled": true,
-    "actions": {
-      "source": {
-        "organizeImports": "on"
-      }
-    }
-  }
+	"$schema": "https://biomejs.dev/schemas/2.4.14/schema.json",
+	"extends": ["ultracite/biome/core", "ultracite/biome/react"],
+	"root": false,
+	"vcs": {
+		"enabled": true,
+		"clientKind": "git",
+		"useIgnoreFile": true
+	}
 }

@@ -1,13 +1,26 @@
 {
-  "$schema": "https://biomejs.dev/schemas/2.4.14/schema.json",
-  "extends": ["./base.json"],
-  "files": {
-    "ignoreUnknown": false,
-    "includes": ["**", "!**/apps/web/src/components/ui/**/*"]
-  },
-  "css": {
-    "parser": {
-      "tailwindDirectives": true
-    }
-  }
+	"$schema": "https://biomejs.dev/schemas/2.4.14/schema.json",
+	"extends": ["./base.json", "ultracite/biome/core", "ultracite/biome/react"],
+	"files": {
+		"ignoreUnknown": false,
+		"includes": ["**", "!**/apps/web/src/components/ui/**/*"]
+	},
+	"css": {
+		"parser": {
+			"tailwindDirectives": true
+		}
+	},
+	"javascript": {
+		"formatter": {
+			"semicolons": "asNeeded"
+		}
+	},
+	"assist": {
+		"enabled": true,
+		"actions": {
+			"source": {
+				"organizeImports": "on"
+			}
+		}
+	}
 }
