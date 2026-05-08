@@ -1,0 +1,13 @@
+{
+  "name": "@neiforfaen/{{ name }}",
+  "private": true,
+  "version": "0.0.0",
+  "scripts": {
+    "clean": "git clean -xdf .cache .turbo dist node_modules",
+    "check-types": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@neiforfaen/biome-config": "workspace:*",
+    "@neiforfaen/typescript-config": "workspace:*",
+  }
+}
