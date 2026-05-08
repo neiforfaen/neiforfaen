@@ -10,15 +10,18 @@
 		"preview": "vite preview"
 	},
 	"dependencies": {
+		"@neiforfaen/design-system": "workspace:*",
 		"react": "19.2.5",
 		"react-dom": "19.2.5",
-		"@neiforfaen/design-system": "workspace:*",
 		"tailwindcss": "4.2.4"
 	},
 	"devDependencies": {
 		"@babel/core": "7.29.0",
 		"@biomejs/biome": "2.4.14",
+		"@neiforfaen/biome-config": "workspace:*",
+		"@neiforfaen/typescript-config": "workspace:*",
 		"@rolldown/plugin-babel": "0.2.3",
+		"@tailwindcss/vite": "4.3.0",
 		"@types/babel__core": "7.20.5",
 		"@types/node": "24.12.2",
 		"@types/react": "19.2.14",
@@ -27,8 +30,6 @@
 		"babel-plugin-react-compiler": "1.0.0",
 		"globals": "17.5.0",
 		"typescript": "6.0.3",
-		"vite": "8.0.10",
-		"@neiforfaen/biome-config": "workspace:*",
-		"@neiforfaen/typescript-config": "workspace:*"
+		"vite": "8.0.10"
 	}
 }
