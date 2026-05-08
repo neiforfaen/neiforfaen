@@ -11,12 +11,14 @@
 		"check": "ultracite check",
 		"fix": "ultracite fix",
 		"check-types": "turbo run check-types",
-		"init-pkg": "turbo gen init"
+		"init-pkg": "turbo gen init",
+		"prepare": "husky"
 	},
 	"devDependencies": {
 		"@biomejs/biome": "2.4.14",
-		"@turbo/gen": "2.9.10",
 		"@neiforfaen/typescript-config": "workspace:*",
+		"@turbo/gen": "2.9.10",
+		"husky": "9.1.7",
 		"turbo": "2.9.10",
 		"typescript": "6.0.3",
 		"ultracite": "latest"

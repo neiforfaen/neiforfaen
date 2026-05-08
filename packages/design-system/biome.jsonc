@@ -3,6 +3,6 @@
 	"extends": ["@neiforfaen/biome-config/react-library"],
 	"root": false,
 	"files": {
-		"includes": ["**", "!**/styles/**/*"]
+		"includes": ["**", "!**/styles/**/*", "!**/components/ui/**/*"]
 	}
 }

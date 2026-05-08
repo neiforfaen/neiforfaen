@@ -1,5 +1,5 @@
 {
-	"extends": "@neiforfaen/typescript-config/react-library.json",
+	"extends": "@neiforfaen/typescript-config/react-library",
 	"compilerOptions": {
 		"ignoreDeprecations": "6.0",
 		"baseUrl": ".",
