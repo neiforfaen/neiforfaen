@@ -1,0 +1,21 @@
+{
+  "name": "neiforfaen",
+  "private": true,
+  "scripts": {
+    "build": "turbo run build",
+    "dev": "turbo run dev",
+    "check": "ultracite check",
+    "fix": "ultracite fix",
+    "check-types": "turbo run check-types"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "2.4.14",
+    "turbo": "2.9.10",
+    "typescript": "6.0.3",
+    "ultracite": "latest"
+  },
+  "packageManager": "pnpm@10.13.1",
+  "engines": {
+    "node": ">=22"
+  }
+}
