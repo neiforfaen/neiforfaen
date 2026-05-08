@@ -1,4 +1,4 @@
-import { cn } from "@neiforfaen/design-system/lib/utils"
+import { cn } from "@/lib/utils"
 
 function AspectRatio({
   ratio,
