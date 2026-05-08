@@ -1,0 +1,16 @@
+{
+	"files": [],
+	"references": [
+		{ "path": "./tsconfig.app.json" },
+		{ "path": "./tsconfig.node.json" }
+	],
+	"compilerOptions": {
+		/* Base URL will be incompatible in TS 7.0 */
+		"ignoreDeprecations": "6.0",
+
+		"baseUrl": ".",
+		"paths": {
+			"@/*": ["./src/*"]
+		}
+	}
+}
