@@ -1,0 +1,13 @@
+{
+  "$schema": "https://biomejs.dev/schemas/2.4.14/schema.json",
+  "extends": ["./base.json"],
+  "files": {
+    "ignoreUnknown": false,
+    "includes": ["**", "!**/apps/web/src/components/ui/**/*"]
+  },
+  "css": {
+    "parser": {
+      "tailwindDirectives": true
+    }
+  }
+}
