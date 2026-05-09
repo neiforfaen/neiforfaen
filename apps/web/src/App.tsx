@@ -1,4 +1,4 @@
-import { Button } from "@neiforfaen/ui/components/button"
+import { Button } from "@neiforfaen/ui"
 
 export function App() {
 	return (
