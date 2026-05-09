@@ -6,6 +6,7 @@
 		"build": "turbo build",
 		"dev": "turbo dev",
 		"lint": "turbo lint",
+		"clean": "turbo clean && rm -rf pnpm-lock.yaml node_modules .turbo",
 		"format": "turbo format",
 		"typecheck": "turbo typecheck",
 		"prepare": "husky"

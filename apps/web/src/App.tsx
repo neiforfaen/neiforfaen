@@ -1,19 +1,17 @@
-import { Button } from "@neiforfaen/ui"
+import { About } from "./components/about"
+import { Footer } from "./components/footer"
+import { Header } from "./components/header"
+import { Projects } from "./components/projects"
+import { Work } from "./components/work"
 
 export function App() {
 	return (
-		<div className="flex min-h-svh p-6">
-			<div className="flex max-w-md min-w-0 flex-col gap-4 text-sm leading-loose">
-				<div>
-					<h1 className="font-medium">Project ready!</h1>
-					<p>You may now add components and start building.</p>
-					<p>We&apos;ve already added the button component for you.</p>
-					<Button className="mt-2">Button</Button>
-				</div>
-				<div className="text-muted-foreground font-mono text-xs">
-					(Press <kbd>d</kbd> to toggle dark mode)
-				</div>
-			</div>
-		</div>
+		<main className="animate-[fadeBlur_1.5s_ease-in-out_forwards] relative z-10 mx-auto grid w-full max-w-2xl gap-16 sm:gap-24 px-4 py-16 sm:py-32">
+			<Header />
+			<About />
+			<Work />
+			<Projects />
+			<Footer />
+		</main>
 	)
 }
