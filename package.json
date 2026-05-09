@@ -7,10 +7,12 @@
 		"dev": "turbo dev",
 		"lint": "turbo lint",
 		"format": "turbo format",
-		"typecheck": "turbo typecheck"
+		"typecheck": "turbo typecheck",
+		"prepare": "husky"
 	},
 	"devDependencies": {
 		"@biomejs/biome": "^2.4.14",
+		"husky": "^9.1.7",
 		"turbo": "2.9.10",
 		"typescript": "6.0.3"
 	},
