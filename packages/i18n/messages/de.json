@@ -13,5 +13,6 @@
 	"language": "Sprache",
 	"locale_en": "Englisch",
 	"locale_de": "Deutsch",
-	"language_tooltip": "Wählen Sie Ihre bevorzugte Sprache aus"
+	"language_tooltip": "Wählen Sie Ihre bevorzugte Sprache aus",
+	"page_title": "Frontend-Entwickler | Kaiden Riley"
 }
