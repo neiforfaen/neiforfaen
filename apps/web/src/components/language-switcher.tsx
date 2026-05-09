@@ -23,7 +23,7 @@ export const LanguageSwitcher = () => {
 	}, [])
 
 	return (
-		<div className="fixed top-0 right-0 z-50">
+		<div className="fixed top-0 right-0 z-50 animate-[fadeBlur_1.5s_ease-in-out_forwards]">
 			<DropdownMenu>
 				<DropdownMenuTrigger className="p-4">
 					<Tooltip>
