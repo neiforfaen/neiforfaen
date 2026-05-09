@@ -1,0 +1,37 @@
+{
+	"name": "@neiforfaen/web",
+	"version": "0.0.0",
+	"type": "module",
+	"private": true,
+	"scripts": {
+		"dev": "vite",
+		"build": "tsc -b && vite build",
+		"lint": "biome check",
+		"format": "biome check --write",
+		"typecheck": "tsc --noEmit",
+		"preview": "vite preview",
+		"clean": "git clean -xdf .cache .turbo dist node_modules"
+	},
+	"dependencies": {
+		"@inlang/paraglide-js": "^2.18.0",
+		"@neiforfaen/ui": "workspace:*",
+		"@neiforfaen/i18n": "workspace:*",
+		"lucide-react": "^1.14.0",
+		"react": "^19.2.4",
+		"react-dom": "^19.2.4"
+	},
+	"devDependencies": {
+		"@babel/core": "^7.29.0",
+		"@rolldown/plugin-babel": "^0.2.3",
+		"@tailwindcss/vite": "^4.3.0",
+		"@types/babel__core": "^7.20.5",
+		"@types/node": "^25.1.0",
+		"@types/react": "^19.2.10",
+		"@types/react-dom": "^19.2.3",
+		"@vitejs/plugin-react": "^6.0.1",
+		"babel-plugin-react-compiler": "^1.0.0",
+		"globals": "^17.5.0",
+		"typescript": "^6.0.3",
+		"vite": "^8.0.10"
+	}
+}

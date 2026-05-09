@@ -1,0 +1,25 @@
+{
+	"name": "neiforfaen",
+	"version": "0.0.0",
+	"private": true,
+	"scripts": {
+		"build": "turbo build",
+		"dev": "turbo dev",
+		"lint": "turbo lint",
+		"clean": "turbo clean && rm -rf pnpm-lock.yaml node_modules .turbo",
+		"format": "turbo format",
+		"typecheck": "turbo typecheck",
+		"prepare": "husky",
+		"translate": "pnpm -F @neiforfaen/i18n machine-translate && pnpm -F @neiforfaen/i18n build"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "^2.4.14",
+		"husky": "^9.1.7",
+		"turbo": "2.9.10",
+		"typescript": "6.0.3"
+	},
+	"packageManager": "pnpm@10.13.1",
+	"engines": {
+		"node": ">=22"
+	}
+}
