@@ -1,5 +1,5 @@
 import * as m from "@neiforfaen/i18n/messages"
-import { getLocale, setLocale } from "@neiforfaen/i18n/runtime"
+import { setLocale } from "@neiforfaen/i18n/runtime"
 import {
 	Button,
 	DropdownMenu,
@@ -13,15 +13,8 @@ import {
 	TooltipTrigger,
 } from "@neiforfaen/ui"
 import { Languages } from "lucide-react"
-import { useCallback } from "react"
 
 export const LanguageSwitcher = () => {
-	const currentLocale = getLocale()
-
-	const handleLanguage = useCallback((locale: typeof currentLocale) => {
-		setLocale(locale)
-	}, [])
-
 	return (
 		<div className="fixed top-0 right-0 z-50 animate-[fadeBlur_1.5s_ease-in-out_forwards]">
 			<DropdownMenu>
@@ -38,10 +31,10 @@ export const LanguageSwitcher = () => {
 				<DropdownMenuContent className="w-40 mr-4" align="start">
 					<DropdownMenuGroup>
 						<DropdownMenuLabel>{m.language()}</DropdownMenuLabel>
-						<DropdownMenuItem onClick={() => handleLanguage("en")}>
+						<DropdownMenuItem onClick={() => setLocale("en")}>
 							{m.locale_en()}
 						</DropdownMenuItem>
-						<DropdownMenuItem onClick={() => handleLanguage("de")}>
+						<DropdownMenuItem onClick={() => setLocale("de")}>
 							{m.locale_de()}
 						</DropdownMenuItem>
 					</DropdownMenuGroup>

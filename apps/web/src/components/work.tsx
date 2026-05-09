@@ -4,7 +4,9 @@ import PleoLogoSrc from "../assets/pleo-logo.webp"
 export const Work = () => {
 	return (
 		<section className="grid gap-6">
-			<h2 className="font-medium text-muted-foreground pb-6 border-b">Work</h2>
+			<h2 className="font-medium text-muted-foreground pb-6 border-b">
+				{m.work_title()}
+			</h2>
 			<div className="grid gap-8">
 				<WorkItem
 					imgSrc={PleoLogoSrc}
