@@ -1,27 +1,28 @@
+import * as m from "@neiforfaen/i18n/messages"
 import { Badge } from "@neiforfaen/ui"
 
 export const Projects = () => {
 	return (
 		<section className="grid gap-6">
 			<h2 className="font-medium text-muted-foreground pb-6 border-b">
-				Projects
+				{m.projects_title()}
 			</h2>
 			<div className="grid gap-6 sm:gap-2">
 				<ProjectItem
 					name="Raiu"
-					description="Ultra fast, minimal API to return formatted in-game ranks."
+					description={m.raiu_description()}
 					url="https://github.com/neiforfaen/raiu"
 					badge="TypeScript"
 				/>
 				<ProjectItem
 					name="Kosei"
-					description="Simple, robust local environment switcher."
+					description={m.kosei_description()}
 					url="https://github.com/neiforfaen/kosei-cli"
 					badge="Rust"
 				/>
 				<ProjectItem
 					name="Goji"
-					description="Lightweight and lightning quick package.json script runner."
+					description={m.goji_description()}
 					url="https://github.com/neiforfaen/goji"
 					badge="Rust"
 				/>

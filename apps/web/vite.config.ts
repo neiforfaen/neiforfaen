@@ -1,4 +1,5 @@
 import path from "node:path"
+import { paraglideVitePlugin } from "@inlang/paraglide-js"
 import babel from "@rolldown/plugin-babel"
 import tailwindcss from "@tailwindcss/vite"
 import react, { reactCompilerPreset } from "@vitejs/plugin-react"
@@ -10,6 +11,10 @@ export default defineConfig({
 		react(),
 		babel({ presets: [reactCompilerPreset()] }),
 		tailwindcss(),
+		paraglideVitePlugin({
+			project: "../../packages/i18n/project.inlang",
+			outdir: "../../packages/i18n/src/paraglide",
+		}),
 	],
 	resolve: {
 		alias: {

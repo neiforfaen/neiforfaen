@@ -1,3 +1,4 @@
+import * as m from "@neiforfaen/i18n/messages"
 import PleoLogoSrc from "../assets/pleo-logo.webp"
 
 export const Work = () => {
@@ -11,10 +12,7 @@ export const Work = () => {
 					companyName="Pleo"
 					jobRoles={["Associate Engineer II", "Associate Engineer"]}
 					dateRange={["Sep 2024", "Present"]}
-					description="Built and maintained subscriptions and recurring vendor features,
-				advanced analytics dashboards with filters, virtualized vendor tables,
-				and integrated Metabase analytics. Also drove UI/UX improvements across
-				the platform with contributions to the company design system."
+					description={m.pleo_experience()}
 				/>
 			</div>
 		</section>

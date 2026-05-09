@@ -1,0 +1,17 @@
+{
+	"$schema": "https://inlang.com/schema/inlang-message-format",
+	"about_title": "Um",
+	"work_title": "Arbeiten",
+	"projects_title": "Projekte",
+	"header_hero_text": "Frontend-Entwickler bei Pleo. Ursprünglich aus Manchester, lebt derzeit in Berlin.",
+	"about_section_one": "Ich habe eine große Leidenschaft für die Entwicklung eleganter und performanter Benutzererlebnisse und bin spezialisiert auf moderne Frontend-Architektur mit {techOne} und {techTwo} . Mein Fokus liegt auf der Gestaltung intuitiver Benutzeroberflächen, insbesondere im Bereich der Frontend-Entwicklungswerkzeuge.",
+	"about_section_two": "Abgesehen von der visuellen Ebene interessiere ich mich für die Systeme und Entscheidungen, die großartigen Produkten zugrunde liegen, und verbringe meine Freizeit damit, über die reine Frontend-Arbeit hinaus zu lernen.",
+	"pleo_experience": "Ich entwickelte und pflegte Abonnements und wiederkehrende Anbieterfunktionen, erweiterte Analyse-Dashboards mit Filtern, virtualisierte Anbietertabellen und integrierte Metabase-Analysen. Außerdem trieb ich UI/UX-Verbesserungen auf der gesamten Plattform voran und trug zum Designsystem des Unternehmens bei.",
+	"raiu_description": "Ultraschnelle, minimalistische API zur Ausgabe formatierter In-Game-Ränge.",
+	"kosei_description": "Einfacher, robuster lokaler Umgebungsumschalter.",
+	"goji_description": "Leichtgewichtiger und blitzschneller package.json-Skript-Runner.",
+	"language": "Sprache",
+	"locale_en": "Englisch",
+	"locale_de": "Deutsch",
+	"language_tooltip": "Wählen Sie Ihre bevorzugte Sprache aus"
+}
