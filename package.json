@@ -13,7 +13,7 @@
 		"translate": "pnpm -F @neiforfaen/i18n machine-translate && pnpm -F @neiforfaen/i18n build"
 	},
 	"devDependencies": {
-		"@biomejs/biome": "^2.4.14",
+		"@biomejs/biome": "^2.4.15",
 		"husky": "^9.1.7",
 		"turbo": "2.9.12",
 		"typescript": "6.0.3"
