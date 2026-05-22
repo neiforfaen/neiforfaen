@@ -12,7 +12,7 @@
 		"machine-translate": "inlang machine translate --project project.inlang"
 	},
 	"devDependencies": {
-		"@inlang/paraglide-js": "^2.18.0",
+		"@inlang/paraglide-js": "^2.18.1",
 		"@inlang/cli": "^3.0.0",
 		"typescript": "6.0.3"
 	},
