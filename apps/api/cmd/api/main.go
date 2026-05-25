@@ -50,6 +50,10 @@ func main() {
 
     authHandler := handler.NewAuthHandler(authSvc)
 
+    financeRepo    := repository.NewFinanceRepository(pool)
+    financeSvc     := service.NewFinanceService(financeRepo)
+    financeHandler := handler.NewFinanceHandler(financeSvc)
+
     // 5. Register routes using the Go 1.22+ enhanced ServeMux
     mux := http.NewServeMux()
 
@@ -57,8 +61,36 @@ func main() {
     mux.HandleFunc("POST /api/v1/auth/register", authHandler.Register)
     mux.HandleFunc("POST /api/v1/auth/login", authHandler.Login)
 
-    // Protected routes — jwt.Middleware wraps the handler
-    // mux.Handle("GET  /api/v1/products",        jwtManager.Middleware(http.HandlerFunc(productHandler.GetAll)))
+    // Finance routes (protected)
+    mux.Handle("GET /api/v1/finance/transactions",
+        jwtManager.Middleware(http.HandlerFunc(financeHandler.ListTransactions)))
+    mux.Handle("POST /api/v1/finance/transactions",
+        jwtManager.Middleware(http.HandlerFunc(financeHandler.CreateTransaction)))
+    mux.Handle("DELETE /api/v1/finance/transactions/{id}",
+        jwtManager.Middleware(http.HandlerFunc(financeHandler.DeleteTransaction)))
+
+    mux.Handle("GET /api/v1/finance/budgets",
+        jwtManager.Middleware(http.HandlerFunc(financeHandler.ListBudgets)))
+    mux.Handle("POST /api/v1/finance/budgets",
+        jwtManager.Middleware(http.HandlerFunc(financeHandler.UpsertBudget)))
+
+    mux.Handle("GET /api/v1/finance/net-worth",
+        jwtManager.Middleware(http.HandlerFunc(financeHandler.GetNetWorth)))
+    mux.Handle("POST /api/v1/finance/net-worth/assets",
+        jwtManager.Middleware(http.HandlerFunc(financeHandler.UpsertAsset)))
+    mux.Handle("DELETE /api/v1/finance/net-worth/assets/{id}",
+        jwtManager.Middleware(http.HandlerFunc(financeHandler.DeleteAsset)))
+    mux.Handle("POST /api/v1/finance/net-worth/liabilities",
+        jwtManager.Middleware(http.HandlerFunc(financeHandler.UpsertLiability)))
+    mux.Handle("DELETE /api/v1/finance/net-worth/liabilities/{id}",
+        jwtManager.Middleware(http.HandlerFunc(financeHandler.DeleteLiability)))
+
+    mux.Handle("GET /api/v1/finance/subscriptions",
+        jwtManager.Middleware(http.HandlerFunc(financeHandler.ListSubscriptions)))
+    mux.Handle("POST /api/v1/finance/subscriptions",
+        jwtManager.Middleware(http.HandlerFunc(financeHandler.CreateSubscription)))
+    mux.Handle("DELETE /api/v1/finance/subscriptions/{id}",
+        jwtManager.Middleware(http.HandlerFunc(financeHandler.DeleteSubscription)))
 
     // 6. Apply global middleware (outermost = last to execute for the request, first for the response)
     loggedMux := middleware.Logger(logger)(mux)

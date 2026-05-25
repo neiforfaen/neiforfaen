@@ -9,20 +9,20 @@ import (
 	"github.com/neiforfaen/neiforfaen/apps/api/internal/model"
 )
 
-type JWTCustomClaims struct {
+type jwtCustomClaims struct {
 	model.Claims
 	jwt.RegisteredClaims
 }
 
 type Manager struct {
-	secretKey []byte
-	expiryMs  int64
+	secretKey   []byte
+	expiryHours int64
 }
 
-func NewManager(secret string, expiryMs int64) *Manager {
+func NewManager(secret string, expiryHours int64) *Manager {
 	return &Manager{
-		secretKey: []byte(secret),
-		expiryMs:  expiryMs,
+		secretKey:   []byte(secret),
+		expiryHours: expiryHours,
 	}
 }
 
@@ -34,10 +34,10 @@ func (m *Manager) Generate(userID int64, email, role string) (string, error) {
 			Role:   role,
 		},
 		RegisteredClaims: jwt.RegisteredClaims{
-            ExpiresAt: jwt.NewNumericDate(time.Now().Add(time.Duration(m.expiryMs) * time.Millisecond)),
-            IssuedAt:  jwt.NewNumericDate(time.Now()),
-            Issuer:    "nff-api",
-        },
+			ExpiresAt: jwt.NewNumericDate(time.Now().Add(time.Duration(m.expiryHours) * time.Hour)),
+		IssuedAt: jwt.NewNumericDate(time.Now()),
+		Issuer:   "nff-api",
+		},
 	}
 
 	token := jwt.NewWithClaims(jwt.SigningMethodHS256, claims)

@@ -6,14 +6,14 @@ import (
 	"strconv"
 )
 
-type Confi struct {
+type Config struct {
 	Server   ServerConfig
 	Database DatabaseConfig
 	JWT      JWTConfig
 }
 
 type ServerConfig struct {
-	Port            int
+	Port            string
 	ReadTimeoutSec  int
 	WriteTimeoutSec int
 }
@@ -23,11 +23,11 @@ type DatabaseConfig struct {
 }
 
 type JWTConfig struct {
-	Secret    	 string
-	ExpirationMs int
+	Secret      string
+	ExpiryHours int64
 }
 
-func LoadConfig() (*Config, error) {
+func Load() (*Config, error) {
 	secret := os.Getenv("JWT_SECRET_KEY")
 	if secret == "" {
 		return nil, fmt.Errorf("JWT_SECRET_KEY environment variable is required")
@@ -48,9 +48,9 @@ func LoadConfig() (*Config, error) {
 		writeTimeout = 10
 	}
 
-	jwtExpiry, _ := strconv.Atoi(os.Getenv("JWT_EXPIRATION_MS"))
+	jwtExpiry, _ := strconv.ParseInt(os.Getenv("JWT_EXPIRY_HOURS"), 10, 64)
 	if jwtExpiry == 0 {
-		jwtExpiry = 3_600_000 // Default to 1 hour
+		jwtExpiry = 1
 	}
 
 	port := os.Getenv("PORT")
@@ -68,8 +68,8 @@ func LoadConfig() (*Config, error) {
 			DSN: dbDSN,
 		},
 		JWT: JWTConfig{
-			Secret:    secret,
-			ExpirationMs: jwtExpiry,
+			Secret:      secret,
+			ExpiryHours: jwtExpiry,
 		},
 	}, nil
 }

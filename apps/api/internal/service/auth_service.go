@@ -6,9 +6,9 @@ import (
     "strings"
 
     "golang.org/x/crypto/bcrypt"
-    "github.com/yourname/go-products-api/internal/auth"
-    "github.com/yourname/go-products-api/internal/model"
-    "github.com/yourname/go-products-api/internal/repository"
+    "github.com/neiforfaen/neiforfaen/apps/api/internal/auth"
+    "github.com/neiforfaen/neiforfaen/apps/api/internal/model"
+    "github.com/neiforfaen/neiforfaen/apps/api/internal/repository"
 )
 
 // AuthService defines the contract for authentication business logic.
