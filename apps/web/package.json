@@ -18,7 +18,7 @@
 		"@neiforfaen/i18n": "workspace:*",
 		"lucide-react": "^1.14.0",
 		"react": "^19.2.4",
-		"react-dom": "^19.2.4"
+		"react-dom": "^19.2.7"
 	},
 	"devDependencies": {
 		"@babel/core": "^7.29.0",
