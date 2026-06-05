@@ -13,7 +13,7 @@
 		"clean": "git clean -xdf .cache .turbo dist node_modules"
 	},
 	"dependencies": {
-		"@inlang/paraglide-js": "^2.18.1",
+		"@inlang/paraglide-js": "^2.18.2",
 		"@neiforfaen/ui": "workspace:*",
 		"@neiforfaen/i18n": "workspace:*",
 		"lucide-react": "^1.14.0",
