@@ -14,7 +14,7 @@
 	},
 	"dependencies": {
 		"@neiforfaen/ui": "workspace:*",
-		"react": "^19.2.4",
+		"react": "^19.2.7",
 		"react-dom": "^19.2.4",
 		"react-router-dom": "^7.0.0",
 		"lucide-react": "^1.14.0"
@@ -25,7 +25,7 @@
 		"@tailwindcss/vite": "^4.3.0",
 		"@types/babel__core": "^7.20.5",
 		"@types/node": "^25.1.0",
-		"@types/react": "^19.2.10",
+		"@types/react": "^19.2.16",
 		"@types/react-dom": "^19.2.3",
 		"@vitejs/plugin-react": "^6.0.1",
 		"babel-plugin-react-compiler": "^1.0.0",
