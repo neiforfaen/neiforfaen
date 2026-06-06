@@ -16,7 +16,7 @@ export const jobs: Job[] = [
     imgAlt: "Pleo logo",
     companyName: "Pleo",
     jobRoles: ["Associate Engineer II", "Associate Engineer"],
-    dateRange: ["Sep 2024", "Present"],
+    dateRange: ["Sep 2024", "July 2026"],
     description:
       "Built and maintained subscriptions and recurring vendor features, advanced analytics dashboards with filters, virtualized vendor tables, and integrated Metabase analytics. Also drove UI/UX improvements across the platform with contributions to the company design system.",
   },
