@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import Asterisk from "../icons/Asterisk.vue";
+import { Asterisk } from "@lucide/vue";
 </script>
 
 <template>
