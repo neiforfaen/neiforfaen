@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import type { Project } from "@/data/projects";
+import ProjectSectionItemBadge from "./ProjectSectionItemBadge.vue";
 
 defineProps<Project>();
 </script>
@@ -11,11 +12,16 @@ defineProps<Project>();
     rel="noopener noreferrer"
     target="_blank"
   >
-    <div class="flex flex-col sm:flex-row sm:items-center sm:gap-2">
-      <p class="font-medium text-foreground transition-colors group-hover:text-muted-foreground">
-        {{ name }}
-      </p>
-      <p class="text-sm text-muted-foreground font-light">{{ description }}</p>
+    <div className="flex flex-col w-full sm:flex-row sm:justify-between sm:items-center sm:gap-2">
+      <div className="sm:flex sm:flex-row sm:items-center sm:gap-2">
+        <p
+          className="font-medium text-foreground transition-colors group-hover:text-muted-foreground"
+        >
+          {{ name }}
+        </p>
+        <p className="text-sm text-muted-foreground font-light">{{ description }}</p>
+      </div>
+      <ProjectSectionItemBadge :text="badge" />
     </div>
   </a>
 </template>
