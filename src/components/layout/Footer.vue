@@ -1,4 +1,6 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import Asterisk from "../icons/Asterisk.vue";
+</script>
 
 <template>
   <footer class="grid place-items-center">
@@ -11,9 +13,9 @@
       >
         GitHub
       </a>
-      <Asterisk size="{16}" />
+      <Asterisk :size="16" />
       <span class="text-sm text-center cursor-default">424</span>
-      <Asterisk size="{16}" />
+      <Asterisk :size="16" />
       <a
         href="https://linkedin.com/in/kaiden-riley"
         class="transition-colors hover:text-foreground"
