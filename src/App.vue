@@ -17,7 +17,11 @@ const lenisOptions: LenisOptions = {
 
 <template>
   <VueLenis root :options="lenisOptions" />
-  <GridBackground :gridSize="80" :fadeIntensity="5" class="h-fit">
+  <GridBackground
+    :gridSize="80"
+    :fadeIntensity="5"
+    class="h-fit animate-[fadeBlur_2s_ease-in-out_forwards]"
+  >
     <Root>
       <Header />
       <About />
