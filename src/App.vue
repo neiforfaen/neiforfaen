@@ -7,6 +7,7 @@ import Root from "@components/layout/Root.vue";
 import About from "@components/sections/About.vue";
 import Work from "@components/sections/Work.vue";
 import Projects from "./components/sections/Projects.vue";
+import GridBackground from "./components/ui/GridBackground.vue";
 
 const lenisOptions: LenisOptions = {
   autoRaf: true,
@@ -16,11 +17,13 @@ const lenisOptions: LenisOptions = {
 
 <template>
   <VueLenis root :options="lenisOptions" />
-  <Root>
-    <Header />
-    <About />
-    <Work />
-    <Projects />
-    <Footer />
-  </Root>
+  <GridBackground :gridSize="80" :fadeIntensity="5" class="h-fit">
+    <Root>
+      <Header />
+      <About />
+      <Work />
+      <Projects />
+      <Footer />
+    </Root>
+  </GridBackground>
 </template>

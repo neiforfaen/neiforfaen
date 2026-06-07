@@ -8,7 +8,7 @@ const aboutTextTwo =
 
 <template>
   <section className="grid gap-6">
-    <h2 className="font-medium text-muted-foreground pb-6 border-b">{{ aboutTitle }}</h2>
+    <h2 className="font-medium text-muted-foreground pb-6">{{ aboutTitle }}</h2>
     <p>{{ aboutTextOne }}</p>
     <p>{{ aboutTextTwo }}</p>
   </section>

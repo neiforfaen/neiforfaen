@@ -7,7 +7,7 @@ const projectsTitle = "Projects";
 
 <template>
   <section class="grid gap-6">
-    <h2 class="font-medium text-muted-foreground pb-6 border-b">{{ projectsTitle }}</h2>
+    <h2 class="font-medium text-muted-foreground pb-6">{{ projectsTitle }}</h2>
     <div class="grid gap-6 sm:gap-2">
       <ProjectSectionItem v-for="project in projects" :key="project.name" v-bind="project" />
     </div>
