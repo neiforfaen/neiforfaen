@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const headerTitle = "Product Engineer. Born in Manchester, vibing in Berlin.";
+const headerTitle = "Product Engineer. Born in Manchester, living in Berlin.";
 </script>
 
 <template>
