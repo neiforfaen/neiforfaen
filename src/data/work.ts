@@ -19,7 +19,7 @@ const lookingForWorkItem: Job = {
   imgAlt: "looking for work image",
   companyName: "Open to work",
   jobRoles: ["Product Engineer", "Frontend Engineer", "Fullstack Engineer (Frontend Bias)"],
-  dateRange: [import.meta.env.OPEN_TO_WORK_DATE_FROM, "Future"],
+  dateRange: [import.meta.env.VITE_OPEN_TO_WORK_DATE_FROM, "Future"],
   description:
     "Currently available for new opportunities. I'm actively seeking my next role and excited to bring my skills and experience to a new team.",
 };
