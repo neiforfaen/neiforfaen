@@ -128,4 +128,9 @@
   html {
     @apply font-mono;
   }
+
+  html.cursor-none,
+  html.cursor-none * {
+    cursor: none;
+  }
 }

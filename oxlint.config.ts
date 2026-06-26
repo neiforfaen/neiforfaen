@@ -5,5 +5,5 @@ import react from "ultracite/oxlint/react"
 
 export default defineConfig({
   extends: [core, next, react],
-  ignorePatterns: core.ignorePatterns,
+  ignorePatterns: [...(core.ignorePatterns ?? ""), "**/components/ui"],
 })

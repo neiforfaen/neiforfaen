@@ -2,29 +2,30 @@ import { Fragment } from "react"
 
 import { cn } from "@/lib/utils"
 
-const links: Record<"label" | "url", string>[] = [
-  { label: "kaiden", url: "/" },
-  { label: "linkedin", url: "https://linkedin.com/in/kaiden-riley" },
-  { label: "github", url: "https://github.com/neiforfaen" },
+const labels: Record<"label" | "url", string>[] = [
+  { label: "kaiden", url: "" },
+  { label: "0x424", url: "/" },
 ]
 
 export const Header = () => (
   <header className="flex flex-row gap-3 justify-between items-center pb-12">
     <div className="flex gap-2 text-sm">
-      {links.map(({ label, url }, index) => {
-        const showSeparator = index > 0 && index < links.length
+      {labels.map(({ label, url }, index) => {
+        const showSeparator = index > 0 && index < labels.length
 
         return (
           <Fragment key={label}>
             {showSeparator && <span>/</span>}
-            <a
-              className="font-medium text-foreground/75 underline underline-offset-4"
-              href={url}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              {label}
-            </a>
+            {index === 0 ? (
+              <span className="font-medium text-foreground/75">{label}</span>
+            ) : (
+              <a
+                className="font-medium text-foreground/75 underline underline-offset-4"
+                href={url}
+              >
+                {label}
+              </a>
+            )}
           </Fragment>
         )
       })}

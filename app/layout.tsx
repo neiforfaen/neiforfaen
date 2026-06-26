@@ -2,6 +2,7 @@ import { Geist, JetBrains_Mono } from "next/font/google"
 import type { ReactNode } from "react"
 
 import "./globals.css"
+import { CursorProvider } from "@/components/cursor"
 import { Header } from "@/components/header"
 import { ThemeProvider } from "@/components/theme-provider"
 import { cn } from "@/lib/utils"
@@ -35,8 +36,10 @@ export default function RootLayout({
     >
       <body className="w-full px-6 lg:px-12 py-6 lg:py-12">
         <ThemeProvider>
-          <Header />
-          {children}
+          <CursorProvider>
+            <Header />
+            {children}
+          </CursorProvider>
         </ThemeProvider>
       </body>
     </html>
