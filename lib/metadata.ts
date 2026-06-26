@@ -24,7 +24,7 @@ export const createMetadata = ({
   const defaultMetadata: Metadata = {
     alternates: {
       types: {
-        "application/rss+xml": "https://dminhvu.com/rss.xml",
+        "application/rss+xml": "https://0x424.kr/rss.xml",
       },
     },
     appleWebApp: {
