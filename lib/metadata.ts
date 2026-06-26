@@ -22,11 +22,6 @@ export const createMetadata = ({
   const parsedTitle = `${title ? `${title} | ` : ""}kaiden`
 
   const defaultMetadata: Metadata = {
-    alternates: {
-      types: {
-        "application/rss+xml": "https://0x424.kr/rss.xml",
-      },
-    },
     appleWebApp: {
       capable: true,
       statusBarStyle: "default",
