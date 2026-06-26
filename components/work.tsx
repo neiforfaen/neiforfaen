@@ -12,7 +12,7 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from "../ui/dialog"
+} from "./ui/dialog"
 
 interface WorkExperience {
   company: string
