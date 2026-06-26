@@ -121,7 +121,7 @@ export const Work = () => (
     <div className="flex flex-col gap-4">
       {experience.map((we) => (
         <Dialog key={`${we.company}-${we.role.split(" ").join("-")}`}>
-          <DialogTrigger render={<WorkItem item={we} />} />
+          <DialogTrigger nativeButton={false} render={<WorkItem item={we} />} />
           <DialogContent>
             <DialogHeader>
               <DialogTitle>{`${we.role} @ ${we.company}`}</DialogTitle>
