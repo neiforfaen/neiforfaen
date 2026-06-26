@@ -68,7 +68,7 @@ const experience: WorkExperience[] = [
   {
     company: "Pleo",
     description: <Description points={associate2Points} />,
-    end: "present",
+    end: "jul '26",
     logoSrc: pleoLogo,
     role: "Associate Engineer II",
     start: "apr '25",
