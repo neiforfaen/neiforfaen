@@ -16,6 +16,7 @@ jobs:
         with:
           node-version: "24.x"
       - run: bun install --frozen-lockfile
+      - run: bunx --bun next typegen
       - run: bun run typecheck
 
   build:
