@@ -7,7 +7,7 @@ const links: { label: string; url: string }[] = [
 ]
 
 export const About = () => (
-  <div className="flex flex-col gap-6">
+  <section className="flex flex-col gap-6">
     <p className="text-balance text-sm leading-relaxed">
       ex-Frontend Engineer at{" "}
       <a
@@ -39,5 +39,5 @@ export const About = () => (
         )
       })}
     </div>
-  </div>
+  </section>
 )

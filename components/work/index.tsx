@@ -110,7 +110,7 @@ const WorkItem = ({ item }: { item: WorkExperience }) => (
 )
 
 export const Work = () => (
-  <div className="flex flex-col">
+  <section className="flex flex-col">
     <div className="flex flex-row justify-between items-center pb-2">
       <h2 className="text-lg font-medium">experience</h2>
       <span className="text-xs text-muted-foreground">
@@ -136,5 +136,5 @@ export const Work = () => (
         </Dialog>
       ))}
     </div>
-  </div>
+  </section>
 )

@@ -8,7 +8,7 @@ const labels: Record<"label" | "url", string>[] = [
 ]
 
 export const Header = () => (
-  <header className="flex flex-row gap-3 justify-between items-center pb-12">
+  <header className="flex flex-row justify-between items-center max-w-sm pb-12">
     <div className="flex gap-2 text-sm">
       {labels.map(({ label, url }, index) => {
         const showSeparator = index > 0 && index < labels.length
