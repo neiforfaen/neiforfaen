@@ -57,7 +57,7 @@ const ThemeProvider = ({
 }: ComponentProps<typeof NextThemesProvider>) => (
   <NextThemesProvider
     attribute="class"
-    defaultTheme="system"
+    defaultTheme="light"
     enableSystem
     disableTransitionOnChange
     {...props}
