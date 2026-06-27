@@ -1,5 +1,8 @@
+"use client"
+
 import Image from "next/image"
 import type { StaticImageData } from "next/image"
+import posthog from "posthog-js"
 import type { ReactElement } from "react"
 import { useId } from "react"
 
@@ -120,7 +123,17 @@ export const Work = () => (
 
     <div className="flex flex-col gap-4">
       {experience.map((we) => (
-        <Dialog key={`${we.company}-${we.role.split(" ").join("-")}`}>
+        <Dialog
+          key={`${we.company}-${we.role.split(" ").join("-")}`}
+          onOpenChange={(open) => {
+            if (open) {
+              posthog.capture("work_experience_opened", {
+                company: we.company,
+                role: we.role,
+              })
+            }
+          }}
+        >
           <DialogTrigger nativeButton={false} render={<WorkItem item={we} />} />
           <DialogContent>
             <DialogHeader>

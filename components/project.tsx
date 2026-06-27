@@ -1,5 +1,6 @@
 "use client"
 
+import posthog from "posthog-js"
 import { useRef } from "react"
 import type { ReactNode } from "react"
 
@@ -45,6 +46,12 @@ export const Project = ({ title, description, url }: ProjectProps) => {
         rel="noopener noreferrer"
         href={url}
         className="text-sm underline underline-offset-4"
+        onClick={() =>
+          posthog.capture("project_link_clicked", {
+            project_title: title,
+            project_url: url,
+          })
+        }
       >
         {description}
       </a>

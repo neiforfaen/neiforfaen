@@ -1,3 +1,6 @@
+"use client"
+
+import posthog from "posthog-js"
 import { Fragment } from "react"
 
 const links: { label: string; url: string }[] = [
@@ -32,6 +35,9 @@ export const About = () => (
               href={url}
               target="_blank"
               rel="noopener noreferrer"
+              onClick={() =>
+                posthog.capture("contact_link_clicked", { label, url })
+              }
             >
               {label}
             </a>
