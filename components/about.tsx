@@ -7,6 +7,7 @@ const links: { label: string; url: string }[] = [
   { label: "linkedin", url: "https://linkedin.com/in/kaiden-riley" },
   { label: "github", url: "https://github.com/neiforfaen" },
   { label: "mail", url: "mailto:kaiden@0x424.kr" },
+  { label: "resume", url: "/resume.pdf" },
 ]
 
 export const About = () => (
