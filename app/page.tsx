@@ -17,7 +17,7 @@ export default function Page() {
     <>
       <Header />
       <main className="flex-1 flex flex-col">
-        <div className="flex flex-col gap-12 w-[24rem] text-left">
+        <div className="flex flex-col gap-12 max-w-[24rem] w-full text-left">
           <About />
 
           <ProjectList>
