@@ -17,7 +17,7 @@ export const Header = () => (
           <Fragment key={label}>
             {showSeparator && <span>/</span>}
             {index === 0 ? (
-              <span className="font-medium text-foreground/75">{label}</span>
+              <h1 className="font-medium text-foreground/75">{label}</h1>
             ) : (
               <a
                 className="font-medium text-foreground/75 underline underline-offset-4"
