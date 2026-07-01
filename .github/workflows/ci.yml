@@ -40,3 +40,14 @@ jobs:
           node-version: "24.x"
       - run: bun install --frozen-lockfile
       - run: bun run check
+
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: oven-sh/setup-bun@v2
+      - uses: actions/setup-node@v6
+        with:
+          node-version: "24.x"
+      - run: bun install --frozen-lockfile
+      - run: bun run test
