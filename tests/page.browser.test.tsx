@@ -52,6 +52,12 @@ describe("Page", () => {
     const projects = [
       {
         description:
+          "Personal site and portfolio, doubling as a working sample of my frontend craft.",
+        title: "neiforfaen/neiforfaen",
+        url: "https://github.com/neiforfaen/neiforfaen",
+      },
+      {
+        description:
           "Knowledge base of my achievements, following Andrej Karpathy's LLM Wiki pattern.",
         title: "neiforfaen/braglist-llm",
         url: "https://github.com/neiforfaen/braglist-llm",
