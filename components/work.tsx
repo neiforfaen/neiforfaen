@@ -86,8 +86,11 @@ const experience: WorkExperience[] = [
   },
 ]
 
-const WorkItem = ({ item }: { item: WorkExperience }) => (
-  <div className="grid grid-cols-[48px_1fr] gap-4">
+const WorkItem = ({
+  item,
+  ...props
+}: { item: WorkExperience } & React.HTMLAttributes<HTMLDivElement>) => (
+  <div {...props} className="grid grid-cols-[48px_1fr] gap-4">
     <div className="flex aspect-square w-12 sm:w-full translate-y-0.5 items-center justify-center border text-foreground">
       <Image
         className="border-transparent"
