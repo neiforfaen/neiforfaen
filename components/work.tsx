@@ -22,6 +22,7 @@ interface WorkExperience {
   start: string
   end?: string
   role: string
+  highlight: string
   logoSrc: StaticImageData
   description: ReactElement
 }
@@ -72,6 +73,7 @@ const experience: WorkExperience[] = [
     company: "Pleo",
     description: <Description points={associate2Points} />,
     end: "jul '26",
+    highlight: "Led the credit notes feature from beta to full rollout",
     logoSrc: pleoLogo,
     role: "Associate Engineer II",
     start: "apr '25",
@@ -80,6 +82,7 @@ const experience: WorkExperience[] = [
     company: "Pleo",
     description: <Description points={associatePoints} />,
     end: "apr '25",
+    highlight: "Cut related support tickets ~80% with a self-serve feature",
     logoSrc: pleoLogo,
     role: "Associate Engineer",
     start: "sep '24",
@@ -111,6 +114,7 @@ const WorkItem = ({
       </div>
 
       <span className="font-light text-foreground text-sm">{item.role}</span>
+      <span className="text-xs text-muted-foreground">{item.highlight}</span>
     </div>
   </div>
 )
