@@ -10,8 +10,4 @@ pre-commit:
         - "**/*.jsonc"
         - "**/*.css"
       stage_fixed: true
-    - run: bun run test
-      glob:
-        - "tests/**/*.test.ts"
-        - "tests/**/*.browser.test.tsx"
-      stage_fixed: true
+    - run: bunx vitest run --browser.headless
