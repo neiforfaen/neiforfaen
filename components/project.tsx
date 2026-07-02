@@ -1,44 +1,14 @@
 "use client"
 
+import Link from "next/link"
 import posthog from "posthog-js"
-import { useRef } from "react"
+import { useEffect, useRef, useState } from "react"
 
 import { useCursor } from "@/components/providers/cursor"
+import { loadProjects } from "@/lib/projects"
+import type { Project } from "@/lib/projects"
 
-const projects: ProjectProps[] = [
-  {
-    description:
-      "Personal site and portfolio, doubling as a working sample of my frontend craft.",
-    title: "neiforfaen/neiforfaen",
-    url: "https://github.com/neiforfaen/neiforfaen",
-  },
-  {
-    description:
-      "Knowledge base of my achievements, following Andrej Karpathy's LLM Wiki pattern.",
-    title: "neiforfaen/braglist-llm",
-    url: "https://github.com/neiforfaen/braglist-llm",
-  },
-  {
-    description:
-      "Extensible local environment switcher for javascript/typescript projects.",
-    title: "neiforfaen/kosei",
-    url: "https://github.com/neiforfaen/kosei-cli",
-  },
-  {
-    description:
-      "Valorant rank lookup API for stream chatbots, fetch and format in a single request.",
-    title: "neiforfaen/raiu",
-    url: "https://github.com/neiforfaen/raiu",
-  },
-]
-
-interface ProjectProps {
-  title: string
-  description: string
-  url: string
-}
-
-export const Project = ({ title, description, url }: ProjectProps) => {
+const ProjectCard = ({ project }: { project: Project }) => {
   const ref = useRef<HTMLDivElement>(null)
   const { onEnter, onLeave } = useCursor()
 
@@ -56,27 +26,39 @@ export const Project = ({ title, description, url }: ProjectProps) => {
       onPointerLeave={onLeave}
       className="flex flex-col gap-2"
     >
-      <h2 className="text-lg font-medium">{title}</h2>
-      <a
-        target="_blank"
-        rel="noopener noreferrer"
-        href={url}
+      <h2 className="text-lg font-medium">{project.title}</h2>
+      <Link
+        href={`/project/${project.slug}`}
         className="text-sm underline underline-offset-4"
         onClick={() =>
           posthog.capture("project_link_clicked", {
-            project_title: title,
-            project_url: url,
+            project_slug: project.slug,
+            project_title: project.title,
           })
         }
       >
-        {description}
-      </a>
+        {project.shortDescription}
+      </Link>
     </div>
   )
 }
 
 export const ProjectList = () => {
+  const [projects, setProjects] = useState<Project[]>([])
+  const [loading, setLoading] = useState(true)
   const { onExitZone } = useCursor()
+
+  useEffect(() => {
+    ;(async () => {
+      const data = await loadProjects()
+      setProjects(data)
+      setLoading(false)
+    })()
+  }, [])
+
+  if (loading) {
+    return <section className="flex flex-col gap-8 lg:max-w-sm" />
+  }
 
   return (
     <section
@@ -84,12 +66,7 @@ export const ProjectList = () => {
       onPointerLeave={onExitZone}
     >
       {projects.map((project) => (
-        <Project
-          key={project.title}
-          title={project.title}
-          description={project.description}
-          url={project.url}
-        />
+        <ProjectCard key={project.slug} project={project} />
       ))}
     </section>
   )
