@@ -1,6 +1,8 @@
 import { describe, expect, it, vi } from "vitest"
 import { render } from "vitest-browser-react"
 
+import { posts } from "@/app/writing/posts"
+
 vi.mock("next/image", () => ({
   default: ({ src, alt }: { src: string | { src: string }; alt: string }) => (
     <img alt={alt} src={typeof src === "string" ? src : src.src} /> // oxlint-disable-line nextjs/no-img-element
@@ -111,6 +113,20 @@ describe("Page", () => {
     await expect
       .element(screen.getByText("Associate Engineer", { exact: true }))
       .toBeVisible()
+  })
+
+  it("renders the writing section and each entry", async () => {
+    const screen = await render(<Page />)
+
+    await expect
+      .element(screen.getByRole("heading", { name: "writing" }))
+      .toBeVisible()
+
+    await Promise.all(
+      posts.map(({ title }) =>
+        expect.element(screen.getByText(title, { exact: true })).toBeVisible()
+      )
+    )
   })
 
   it("opens and closes the experience dialog with the right details", async () => {

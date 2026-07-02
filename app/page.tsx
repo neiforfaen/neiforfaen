@@ -4,6 +4,7 @@ import { About } from "@/components/about"
 import { Header } from "@/components/header"
 import { ProjectList } from "@/components/project"
 import { Work } from "@/components/work"
+import { Writing } from "@/components/writing"
 import { createMetadata } from "@/lib/metadata"
 
 export const metadata: Metadata = createMetadata({
@@ -23,6 +24,8 @@ export default function Page() {
           <ProjectList />
 
           <Work />
+
+          <Writing />
         </div>
       </main>
     </>

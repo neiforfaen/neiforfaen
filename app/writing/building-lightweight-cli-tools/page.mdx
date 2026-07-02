@@ -1,0 +1,118 @@
+import { createMetadata } from "@/lib/metadata"
+
+export const metadata = createMetadata({
+  description:
+    "How I build small, fast CLI tools and keep dependencies to a minimum.",
+  title: "Building Lightweight CLI Tools",
+})
+
+<div className="flex flex-col w-full gap-2">
+  <h1 className="text-lg font-medium">building lightweight CLI tools</h1>
+  <span className="font-light text-muted-foreground text-xs">02. jul '26</span>
+</div>
+
+If I’m building a small CLI tool, I try to keep the dependency list as small as possible. It’s
+easy to reach for a package for argument parsing, coloring output, spinners, prompts, config loading,
+and file operations. For many tools though, Node already gives you most of what you need.
+
+That tradeoff matters more than it seems. Fewer dependencies usually means faster install times,
+smaller bundles, less maintenance, fewer transitive vulnerabilities, and a codebase that’s easier
+to understand when you come back to it a few months later.
+
+This is what I focused on when I built [kosei](https://github.com/neiforfaen/kosei-cli), a tool
+now used at [Pleo](https://pleo.io) to switch between environments (`staging | dev`) when developing locally.
+
+### Start with the platform
+
+A good lightweight CLI usually only needs a few built-in tools:
+
+- `process.argv` for arguments
+- `fs/promises` for reading and writing files
+- `path` for file paths
+- `child_process` for running shell commands
+- `readline` if you need simple interactive input
+
+For example, this is enough to build a tiny command parser:
+
+```ts
+#!/usr/bin/env node
+
+const args = process.argv.slice(2)
+const command = args
+
+if (!command || command === "--help") {
+  console.log(`
+kosei <command>
+
+Commands:
+  init       Create a new config
+  check      Validate project setup
+`)
+  process.exit(0)
+}
+
+if (command === "init") {
+  console.log("Scaffolding project...")
+} else if (command === "check") {
+  console.log("Running checks...")
+} else {
+  console.error(`Unknown command: ${command}`)
+  process.exit(1)
+}
+```
+
+This approach is simple, readable, and enough for a personal tool or internal developer workflow.
+
+### Add dependencies only when the pain is real
+
+I usually treat dependencies as a cost, not a default. That doesn’t mean I never reach for packages.
+It means I want a clear reason before I add one.
+
+A few questions I ask first:
+
+- Can I solve this cleanly, with minimal effort using a standard library?
+- Is this feature core to the tool, or just a nice to have?
+- Will this dependency reduce code, or just hide simple logic?
+- Am I adding one package and accidentally pulling in fifty more?
+
+If a library gives me real leverage in the form of better UX, safer parsing, or much less maintenance
+then of course, I’ll use it. But I’d rather add one well-chosen dependency than five convenience
+packages the tool really doesn’t need.
+
+### Keep the surface area small
+
+Lightweight tools are easier to maintain when they do one thing well. I like to structure CLIs
+around a small core:
+
+```txt
+src/
+  cli.ts
+  commands/
+    init.ts
+    check.ts
+  utils/
+    fs.ts
+    logger.ts
+```
+
+That keeps the entrypoint thin and makes each command easier to test. It also makes it easier to swap
+implementation details later without rewriting the whole tool.
+
+### Optimize for startup and clarity
+
+CLI tools feel best when they start instantly and behave predictably. Keeping dependencies minimal
+helps with that, but so does avoiding unnecessary abstraction. If a command only needs to read a file,
+transform some content, and write output, I’d rather keep that logic direct than build a mini framework
+around it.
+
+A good CLI doesn’t need to be clever. It needs to be fast, understandable, and easy to trust.
+
+### Final thought
+
+For small developer tools, being "boring" is usually the first step. Start with the solving the problem,
+write the simplest version that works without dependencies where possible, and only add them when they improve
+DX or solve the problem faster.
+
+That approach has helped me build CLI tools that are faster to ship, easier to maintain, and much nicer to revisit later.
+
+[back to writing](/writing)
