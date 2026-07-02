@@ -26,7 +26,7 @@ export const About = () => (
     </p>
     <div className="flex flex-row gap-2 text-sm">
       {links.map(({ label, url }, index) => {
-        const showSeparator = index > 0 && index < links.length
+        const showSeparator = index > 0
 
         return (
           <Fragment key={label}>
