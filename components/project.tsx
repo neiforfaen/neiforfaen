@@ -36,7 +36,7 @@ interface ProjectProps {
 }
 
 export const Project = ({ title, description, url }: ProjectProps) => (
-  <div className="flex flex-col gap-2">
+  <div className="flex flex-col gap-2 cursor-target">
     <h2 className="text-lg font-medium">{title}</h2>
     <a
       target="_blank"
