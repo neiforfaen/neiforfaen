@@ -3,7 +3,7 @@
 import posthog from "posthog-js"
 import { useRef } from "react"
 
-import { useCursor } from "@/components/cursor"
+import { useCursor } from "@/components/providers/cursor"
 
 const projects: ProjectProps[] = [
   {
@@ -79,7 +79,10 @@ export const ProjectList = () => {
   const { onExitZone } = useCursor()
 
   return (
-    <section className="flex flex-col gap-8" onPointerLeave={onExitZone}>
+    <section
+      className="flex flex-col gap-8 lg:max-w-sm"
+      onPointerLeave={onExitZone}
+    >
       {projects.map((project) => (
         <Project
           key={project.title}

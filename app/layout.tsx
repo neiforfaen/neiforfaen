@@ -2,8 +2,7 @@ import { Geist, JetBrains_Mono } from "next/font/google"
 import type { ReactNode } from "react"
 
 import "./globals.css"
-import { CursorProvider } from "@/components/cursor"
-import { ThemeProvider } from "@/components/theme-provider"
+import { RootProviders } from "@/components/providers"
 import { cn } from "@/lib/utils"
 
 const fontSans = Geist({
@@ -33,10 +32,14 @@ export default function RootLayout({
         "font-mono"
       )}
     >
-      <body className="w-full px-6 lg:px-12 py-6 lg:py-12">
-        <ThemeProvider>
-          <CursorProvider>{children}</CursorProvider>
-        </ThemeProvider>
+      <body>
+        <RootProviders>
+          <div className="p-6 lg:p-12">
+            <div className="flex flex-col gap-12 mx-auto w-full max-w-xl lg:max-w-3xl">
+              {children}
+            </div>
+          </div>
+        </RootProviders>
       </body>
     </html>
   )

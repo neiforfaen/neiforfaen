@@ -21,7 +21,7 @@ interface WorkExperience {
   start: string
   end?: string
   role: string
-  highlight: string
+  highlights: string[]
   logoSrc: StaticImageData
   description: ReactElement
 }
@@ -44,7 +44,7 @@ const associate2Points: string[] = [
   `Built internal CLI tooling enabling engineers to switch between
           development and staging environments with a single command, reducing
           local setup friction and improving day-to-day dev experience`,
-  `Led the full project lifecycle for an invoices related feature and
+  `Led the full project lifecycle for credit notes feature and
           initiated a beta test to gather customer feedback during a controlled
           rollout and iterated rapidly before releasing to the full user base`,
   `Collaborated cross-functionally with product managers, designers, and
@@ -68,7 +68,11 @@ const experience: WorkExperience[] = [
     company: "Pleo",
     description: <Description points={associate2Points} />,
     end: "jul '26",
-    highlight: "Led the credit notes feature from beta to full rollout",
+    highlights: [
+      "Led the credit notes feature from beta to full rollout",
+      "Built CLI tooling for one-command environment switching",
+      "Shipped design system components used across the product",
+    ],
     logoSrc: pleoLogo,
     role: "Associate Engineer II",
     start: "apr '25",
@@ -77,7 +81,11 @@ const experience: WorkExperience[] = [
     company: "Pleo",
     description: <Description points={associatePoints} />,
     end: "apr '25",
-    highlight: "Cut related support tickets ~80% with a self-serve feature",
+    highlights: [
+      "Cut related support tickets ~80% with a self-serve feature",
+      "Shipped it end-to-end across React and React Native apps",
+      "Promoted to Associate Engineer II after 7 months",
+    ],
     logoSrc: pleoLogo,
     role: "Associate Engineer",
     start: "sep '24",
@@ -109,7 +117,11 @@ const WorkItem = ({
       </div>
 
       <span className="font-light text-foreground text-sm">{item.role}</span>
-      <span className="text-xs text-muted-foreground">{item.highlight}</span>
+      <div className="flex flex-col gap-1 text-xs text-muted-foreground">
+        {item.highlights.map((h) => (
+          <span key={h}>{h}</span>
+        ))}
+      </div>
     </div>
   </div>
 )
@@ -119,7 +131,7 @@ export const Work = () => (
     <div className="flex flex-row justify-between items-center pb-2">
       <h2 className="text-lg font-medium">experience</h2>
       <span className="text-xs text-muted-foreground">
-        [click any role for details]
+        [click a role for more details]
       </span>
     </div>
 

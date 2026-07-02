@@ -11,13 +11,9 @@ export const metadata = createMetadata({
   <span className="font-light text-muted-foreground text-xs">02. jul '26</span>
 </div>
 
-If I’m building a small CLI tool, I try to keep the dependency list as small as possible. It’s
-easy to reach for a package for argument parsing, coloring output, spinners, prompts, config loading,
-and file operations. For many tools though, Node already gives you most of what you need.
+Small CLI tools benefit from a tight dependency list. You can find a package for argument parsing, colored output, spinners, prompts, config loading, file handling. Node gives you most of what you need without them.
 
-That tradeoff matters more than it seems. Fewer dependencies usually means faster install times,
-smaller bundles, less maintenance, fewer transitive vulnerabilities, and a codebase that’s easier
-to understand when you come back to it a few months later.
+The tradeoff is real. Fewer dependencies mean faster installs, smaller bundles, less maintenance, fewer hidden vulnerabilities, and code that doesn’t require forensics when you return to it six months later.
 
 This is what I focused on when I built [kosei](https://github.com/neiforfaen/kosei-cli), a tool
 now used at [Pleo](https://pleo.io) to switch between environments (`staging | dev`) when developing locally.
@@ -61,12 +57,11 @@ if (command === "init") {
 }
 ```
 
-This approach is simple, readable, and enough for a personal tool or internal developer workflow.
+This is enough for a personal tool or internal workflow. It reads cleanly. It ships fast.
 
 ### Add dependencies only when the pain is real
 
-I usually treat dependencies as a cost, not a default. That doesn’t mean I never reach for packages.
-It means I want a clear reason before I add one.
+Treat dependencies as a cost. This doesn’t forbid packages. It demands a reason before you add one.
 
 A few questions I ask first:
 
@@ -75,14 +70,11 @@ A few questions I ask first:
 - Will this dependency reduce code, or just hide simple logic?
 - Am I adding one package and accidentally pulling in fifty more?
 
-If a library gives me real leverage in the form of better UX, safer parsing, or much less maintenance
-then of course, I’ll use it. But I’d rather add one well-chosen dependency than five convenience
-packages the tool really doesn’t need.
+A library that delivers measurable UX, safer parsing, or genuine maintenance wins is worth adding. Five convenience packages that hide simple logic are not.
 
 ### Keep the surface area small
 
-Lightweight tools are easier to maintain when they do one thing well. I like to structure CLIs
-around a small core:
+Single-purpose tools stay maintainable. Structure around a small core:
 
 ```txt
 src/
@@ -95,24 +87,18 @@ src/
     logger.ts
 ```
 
-That keeps the entrypoint thin and makes each command easier to test. It also makes it easier to swap
-implementation details later without rewriting the whole tool.
+This keeps the entrypoint thin, makes each command testable in isolation, and lets you change implementation details without burning the whole tool.
 
 ### Optimize for startup and clarity
 
-CLI tools feel best when they start instantly and behave predictably. Keeping dependencies minimal
-helps with that, but so does avoiding unnecessary abstraction. If a command only needs to read a file,
-transform some content, and write output, I’d rather keep that logic direct than build a mini framework
-around it.
+CLI tools should start instantly and behave predictably. Minimal dependencies help. So does resisting the urge to abstract. If a command reads a file, transforms it, and writes output, keep that logic direct. Don’t build a framework to hide it.
 
-A good CLI doesn’t need to be clever. It needs to be fast, understandable, and easy to trust.
+A good CLI doesn’t need to be clever. Fast, readable, trustworthy. That’s the full list.
 
 ### Final thought
 
-For small developer tools, being "boring" is usually the first step. Start with the solving the problem,
-write the simplest version that works without dependencies where possible, and only add them when they improve
-DX or solve the problem faster.
+Write the simplest version that works. Skip dependencies where possible. Add them only when they reduce cognitive load or solve a genuine problem faster.
 
-That approach has helped me build CLI tools that are faster to ship, easier to maintain, and much nicer to revisit later.
+This isn't ideology. Minimal tools ship faster. They're easier to maintain. When you open one a year later, you understand it immediately instead of navigating someone else's abstraction.
 
 [back to writing](/writing)

@@ -9,7 +9,7 @@ import { createMetadata } from "@/lib/metadata"
 
 export const metadata: Metadata = createMetadata({
   description:
-    "Product engineer shipping across web and mobile — Focused on fast, accessible, high-quality UX.",
+    "Product engineer shipping fast, accessible software for web and mobile.",
   title: "product engineer",
 })
 
@@ -17,16 +17,17 @@ export default function Page() {
   return (
     <>
       <Header />
-      <main className="flex-1 flex flex-col">
-        <div className="flex flex-col gap-12 max-w-[24rem] w-full text-left">
-          <About />
 
+      <main className="flex flex-col gap-12">
+        <About />
+
+        <div className="flex flex-col gap-8 lg:flex-row">
           <ProjectList />
 
           <Work />
-
-          <Writing />
         </div>
+
+        <Writing />
       </main>
     </>
   )

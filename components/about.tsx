@@ -11,9 +11,11 @@ const links: { label: string; url: string }[] = [
 ]
 
 export const About = () => (
-  <section className="flex flex-col gap-6">
-    <p className="text-balance text-sm leading-relaxed">
-      ex-Frontend Engineer at{" "}
+  <section className="flex flex-col lg:flex-row lg:items-start justify-between gap-6">
+    <p className="text-sm leading-relaxed max-w-106 text-balance">
+      Product engineer shipping AI-native experiences across mobile and web.
+      Originally from Manchester, England; now living in Berlin, Germany. ex-
+      {""}
       <a
         href="https://pleo.io"
         target="_blank"
@@ -22,9 +24,9 @@ export const About = () => (
       >
         Pleo
       </a>
-      . Focused on building exceptional user experiences across mobile and web.
+      .
     </p>
-    <div className="flex flex-row gap-2 text-sm">
+    <div className="flex flex-row gap-2 text-sm max-w-fit">
       {links.map(({ label, url }, index) => {
         const showSeparator = index > 0
 
