@@ -26,7 +26,7 @@ describe("Page", () => {
     const screen = await render(<Page />)
 
     await expect
-      .element(screen.getByText(/ex-Frontend Engineer at/u))
+      .element(screen.getByText(/Product engineer shipping/u))
       .toBeVisible()
 
     const pleoLink = screen.getByRole("link", { name: "Pleo" })
