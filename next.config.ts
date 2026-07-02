@@ -1,9 +1,11 @@
+import createMDX from "@next/mdx"
 import type { NextConfig } from "next"
 
 const nextConfig: NextConfig = {
   images: {
     qualities: [100, 75],
   },
+  pageExtensions: ["ts", "tsx", "mdx"],
   rewrites() {
     return [
       {
@@ -23,4 +25,4 @@ const nextConfig: NextConfig = {
   skipTrailingSlashRedirect: true,
 }
 
-export default nextConfig
+export default createMDX()(nextConfig)
