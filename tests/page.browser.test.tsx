@@ -104,7 +104,7 @@ describe("Page", () => {
       .element(screen.getByRole("heading", { name: "experience" }))
       .toBeVisible()
     await expect
-      .element(screen.getByText("[click any role for details]"))
+      .element(screen.getByText("[click a role for more details]"))
       .toBeVisible()
 
     await expect
