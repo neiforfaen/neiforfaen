@@ -13,6 +13,6 @@ export const posts: Post[] = [
     description:
       "How I build small, fast CLI tools and keep dependencies to a minimum.",
     slug: "building-lightweight-cli-tools",
-    title: "Building lightweight CLI tools",
+    title: "building lightweight CLI tools",
   },
 ]
