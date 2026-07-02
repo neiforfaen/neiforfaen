@@ -9,7 +9,7 @@ import { createMetadata } from "@/lib/metadata"
 
 export const metadata: Metadata = createMetadata({
   description:
-    "Product engineer shipping across web and mobile — Focused on fast, accessible, high-quality UX.",
+    "Product engineer shipping fast, accessible software for web and mobile.",
   title: "product engineer",
 })
 
