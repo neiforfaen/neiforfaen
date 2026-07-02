@@ -5,8 +5,8 @@ import posthog from "posthog-js"
 import { useEffect, useRef, useState } from "react"
 
 import { useCursor } from "@/components/providers/cursor"
-import { loadProjects } from "@/lib/projects"
 import type { Project } from "@/lib/projects"
+import { loadProjects } from "@/lib/projects.server"
 
 const ProjectCard = ({ project }: { project: Project }) => {
   const ref = useRef<HTMLDivElement>(null)

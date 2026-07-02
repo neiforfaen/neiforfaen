@@ -3,7 +3,7 @@
 import { promises as fs } from "node:fs"
 import path from "node:path"
 
-import type { Project } from "@/lib/projects"
+import type { Project } from "./project-types"
 
 interface ProjectsData {
   projects: Project[]

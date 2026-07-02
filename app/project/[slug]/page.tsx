@@ -4,7 +4,7 @@ import { notFound } from "next/navigation"
 import { Header } from "@/components/header"
 import { ProjectDetail } from "@/components/project/detail"
 import { createMetadata } from "@/lib/metadata"
-import { getProjectBySlug, loadProjects } from "@/lib/projects"
+import { getProjectBySlug, loadProjects } from "@/lib/projects.server"
 
 interface ProjectPageProps {
   params: Promise<{

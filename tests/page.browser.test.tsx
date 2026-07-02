@@ -10,12 +10,12 @@ vi.mock("next/image", () => ({
 }))
 
 vi.mock("@/lib/projects", () => ({
-  getProjectBySlug: async (slug: string) => null,
-  loadProjects: async () => [
+  getProjectBySlug: async () => null,
+  loadProjects: () => [
     {
+      demo: "https://kaiden.dev",
       description:
         "Personal site and portfolio, doubling as a working sample of my frontend craft.",
-      demo: "https://kaiden.dev",
       github: "https://github.com/neiforfaen/neiforfaen",
       media: { screenshot: "/projects/neiforfaen-screenshot.png", video: null },
       shortDescription:
@@ -25,9 +25,9 @@ vi.mock("@/lib/projects", () => ({
       title: "neiforfaen/neiforfaen",
     },
     {
+      demo: null,
       description:
         "Knowledge base of my achievements, following Andrej Karpathy's LLM Wiki pattern.",
-      demo: null,
       github: "https://github.com/neiforfaen/braglist-llm",
       media: {
         screenshot: "/projects/braglist-llm-screenshot.png",
@@ -40,9 +40,9 @@ vi.mock("@/lib/projects", () => ({
       title: "neiforfaen/braglist-llm",
     },
     {
+      demo: null,
       description:
         "Extensible local environment switcher for javascript/typescript projects.",
-      demo: null,
       github: "https://github.com/neiforfaen/kosei-cli",
       media: { screenshot: "/projects/kosei-screenshot.png", video: null },
       shortDescription:
@@ -52,9 +52,9 @@ vi.mock("@/lib/projects", () => ({
       title: "neiforfaen/kosei",
     },
     {
+      demo: null,
       description:
         "An API service that provides Valorant player rank lookups optimized for stream chatbots. Fetches player data, formats rankings, and delivers results in a single request with caching for performance.",
-      demo: null,
       github: "https://github.com/neiforfaen/raiu",
       media: { screenshot: "/projects/raiu-screenshot.png", video: null },
       shortDescription:
