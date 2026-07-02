@@ -15,22 +15,20 @@ export const metadata: Metadata = createMetadata({
 
 export default function Page() {
   return (
-    <div className="p-6 lg:p-12">
-      <div className="flex flex-col gap-12 mx-auto w-full max-w-xl lg:max-w-3xl">
-        <Header />
+    <>
+      <Header />
 
-        <main className="flex flex-col gap-8">
-          <About />
+      <main className="flex flex-col gap-12">
+        <About />
 
-          <div className="flex flex-col gap-8 lg:flex-row">
-            <ProjectList />
+        <div className="flex flex-col gap-8 lg:flex-row">
+          <ProjectList />
 
-            <Work />
-          </div>
+          <Work />
+        </div>
 
-          <Writing />
-        </main>
-      </div>
-    </div>
+        <Writing />
+      </main>
+    </>
   )
 }

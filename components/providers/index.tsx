@@ -1,7 +1,8 @@
 import type { ReactNode } from "react"
 
-import { TooltipProvider } from "../ui/tooltip"
-import { ThemeProvider } from "./theme-provider"
+import { CursorProvider } from "@/components/providers/cursor"
+import { ThemeProvider } from "@/components/providers/theme-provider"
+import { TooltipProvider } from "@/components/ui/tooltip"
 
 interface RootProvidersProps {
   children: ReactNode
@@ -9,6 +10,8 @@ interface RootProvidersProps {
 
 export const RootProviders = ({ children }: RootProvidersProps) => (
   <ThemeProvider>
-    <TooltipProvider>{children}</TooltipProvider>
+    <TooltipProvider>
+      <CursorProvider>{children}</CursorProvider>
+    </TooltipProvider>
   </ThemeProvider>
 )

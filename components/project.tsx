@@ -3,7 +3,7 @@
 import posthog from "posthog-js"
 import { useRef } from "react"
 
-import { useCursor } from "@/components/cursor"
+import { useCursor } from "@/components/providers/cursor"
 
 const projects: ProjectProps[] = [
   {
