@@ -1,3 +1,5 @@
+"use server"
+
 import { promises as fs } from "node:fs"
 import path from "node:path"
 
@@ -39,7 +41,9 @@ export const loadProjects = async (): Promise<Project[]> => {
   return cachedProjects
 }
 
-export const getProjectBySlug = async (slug: string): Promise<Project | null> => {
+export const getProjectBySlug = async (
+  slug: string
+): Promise<Project | null> => {
   const projects = await loadProjects()
   return projects.find((p) => p.slug === slug) ?? null
 }

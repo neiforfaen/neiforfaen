@@ -12,35 +12,35 @@ interface ProjectPageProps {
   }>
 }
 
-export async function generateStaticParams() {
+export const generateStaticParams = async () => {
   const projects = await loadProjects()
   return projects.map((project) => ({
     slug: project.slug,
   }))
 }
 
-export async function generateMetadata(
-  { params }: ProjectPageProps,
-): Promise<Metadata> {
+export const generateMetadata = async ({
+  params,
+}: ProjectPageProps): Promise<Metadata> => {
   const { slug } = await params
   const project = await getProjectBySlug(slug)
 
   if (!project) {
-    return createMetadata({ title: "Project not found", description: "" })
+    return createMetadata({ description: "", title: "Project not found" })
   }
 
   return createMetadata({
-    title: project.title,
     description: project.shortDescription,
     openGraph: {
-      title: project.title,
       description: project.shortDescription,
       images: project.media.screenshot ? [project.media.screenshot] : undefined,
+      title: project.title,
     },
+    title: project.title,
   })
 }
 
-export default async function ProjectPage({ params }: ProjectPageProps) {
+const ProjectPage = async ({ params }: ProjectPageProps) => {
   const { slug } = await params
   const project = await getProjectBySlug(slug)
 
@@ -55,3 +55,5 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
     </>
   )
 }
+
+export default ProjectPage

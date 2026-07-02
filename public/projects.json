@@ -1,0 +1,56 @@
+{
+  "projects": [
+    {
+      "slug": "neiforfaen",
+      "title": "neiforfaen/neiforfaen",
+      "shortDescription": "Personal site and portfolio, doubling as a working sample of my frontend craft.",
+      "description": "This is my personal portfolio and blog — a place to showcase my frontend work and share thoughts on web development. Built with Next.js, React, and Tailwind CSS. It serves as both a professional portfolio and an ongoing experiment with modern web technologies.",
+      "tech": ["Next.js", "React", "TypeScript", "Tailwind CSS"],
+      "github": "https://github.com/neiforfaen/neiforfaen",
+      "demo": "https://kaiden.dev",
+      "media": {
+        "video": null,
+        "screenshot": "/projects/neiforfaen-screenshot.png"
+      }
+    },
+    {
+      "slug": "braglist-llm",
+      "title": "neiforfaen/braglist-llm",
+      "shortDescription": "Knowledge base of my achievements, following Andrej Karpathy's LLM Wiki pattern.",
+      "description": "A knowledge base system for tracking accomplishments and learnings, inspired by Andrej Karpathy's approach to documenting technical expertise. Built to help organize and retrieve professional achievements in a structured format.",
+      "tech": ["JavaScript", "Node.js"],
+      "github": "https://github.com/neiforfaen/braglist-llm",
+      "demo": null,
+      "media": {
+        "video": null,
+        "screenshot": "/projects/braglist-llm-screenshot.png"
+      }
+    },
+    {
+      "slug": "kosei",
+      "title": "neiforfaen/kosei",
+      "shortDescription": "Extensible local environment switcher for javascript/typescript projects.",
+      "description": "A CLI tool that makes it easy to switch between different local environments for JavaScript and TypeScript projects. Supports environment configuration, variable management, and quick switching between development contexts.",
+      "tech": ["TypeScript", "Node.js", "CLI"],
+      "github": "https://github.com/neiforfaen/kosei-cli",
+      "demo": null,
+      "media": {
+        "video": null,
+        "screenshot": "/projects/kosei-screenshot.png"
+      }
+    },
+    {
+      "slug": "raiu",
+      "title": "neiforfaen/raiu",
+      "shortDescription": "Valorant rank lookup API for stream chatbots, fetch and format in a single request.",
+      "description": "An API service that provides Valorant player rank lookups optimized for stream chatbots. Fetches player data, formats rankings, and delivers results in a single request with caching for performance.",
+      "tech": ["TypeScript", "Node.js", "API", "Valorant"],
+      "github": "https://github.com/neiforfaen/raiu",
+      "demo": null,
+      "media": {
+        "video": null,
+        "screenshot": "/projects/raiu-screenshot.png"
+      }
+    }
+  ]
+}

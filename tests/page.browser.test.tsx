@@ -55,26 +55,26 @@ describe("Page", () => {
       {
         description:
           "Personal site and portfolio, doubling as a working sample of my frontend craft.",
+        slug: "neiforfaen",
         title: "neiforfaen/neiforfaen",
-        url: "https://github.com/neiforfaen/neiforfaen",
       },
       {
         description:
           "Knowledge base of my achievements, following Andrej Karpathy's LLM Wiki pattern.",
+        slug: "braglist-llm",
         title: "neiforfaen/braglist-llm",
-        url: "https://github.com/neiforfaen/braglist-llm",
       },
       {
         description:
           "Extensible local environment switcher for javascript/typescript projects.",
+        slug: "kosei",
         title: "neiforfaen/kosei",
-        url: "https://github.com/neiforfaen/kosei-cli",
       },
       {
         description:
           "Valorant rank lookup API for stream chatbots, fetch and format in a single request.",
+        slug: "raiu",
         title: "neiforfaen/raiu",
-        url: "https://github.com/neiforfaen/raiu",
       },
     ]
 
@@ -86,13 +86,7 @@ describe("Page", () => {
           .toBeVisible(),
         expect
           .element(screen.getByRole("link", { name: project.description }))
-          .toHaveAttribute("href", project.url),
-        expect
-          .element(screen.getByRole("link", { name: project.description }))
-          .toHaveAttribute("target", "_blank"),
-        expect
-          .element(screen.getByRole("link", { name: project.description }))
-          .toHaveAttribute("rel", "noopener noreferrer"),
+          .toHaveAttribute("href", `/project/${project.slug}`),
       ])
     }
   })
