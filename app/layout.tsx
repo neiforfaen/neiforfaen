@@ -2,7 +2,7 @@ import { Geist, JetBrains_Mono } from "next/font/google"
 import type { ReactNode } from "react"
 
 import "./globals.css"
-import { ThemeProvider } from "@/components/theme-provider"
+import { RootProviders } from "@/components/providers"
 import { cn } from "@/lib/utils"
 
 const fontSans = Geist({
@@ -33,7 +33,7 @@ export default function RootLayout({
       )}
     >
       <body>
-        <ThemeProvider>{children}</ThemeProvider>
+        <RootProviders>{children}</RootProviders>
       </body>
     </html>
   )
