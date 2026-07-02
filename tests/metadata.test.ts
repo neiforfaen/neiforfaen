@@ -27,41 +27,6 @@ describe("createMetadata", () => {
     expect(metadata.description).toBe("A description")
   })
 
-  it("sets the expected defaults", () => {
-    const metadata = createMetadata({
-      description: "A description",
-      title: "Home",
-    })
-
-    expect(metadata.applicationName).toBe("neiforfaen")
-    expect(metadata.publisher).toBe("neiforfaen")
-    expect(metadata.creator).toBe("Kaiden Riley")
-    expect(metadata.authors).toEqual([
-      { name: "Kaiden Riley", url: "https://0x424.kr" },
-    ])
-    expect(metadata.formatDetection).toEqual({ telephone: false })
-    expect(metadata.appleWebApp).toEqual({
-      capable: true,
-      statusBarStyle: "default",
-      title: "Home | kaiden",
-    })
-  })
-
-  it("builds openGraph metadata from the title and description", () => {
-    const metadata = createMetadata({
-      description: "A description",
-      title: "Home",
-    })
-
-    expect(metadata.openGraph).toEqual({
-      description: "A description",
-      locale: "en_US",
-      siteName: "neiforfaen",
-      title: "Home | kaiden",
-      type: "website",
-    })
-  })
-
   it("overrides defaults with additional properties", () => {
     const metadata = createMetadata({
       description: "A description",

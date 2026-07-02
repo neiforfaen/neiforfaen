@@ -4,7 +4,6 @@ import Image from "next/image"
 import type { StaticImageData } from "next/image"
 import posthog from "posthog-js"
 import type { ReactElement } from "react"
-import { useId } from "react"
 
 import pleoLogo from "@/assets/pleo-logo.webp"
 
@@ -29,16 +28,12 @@ interface WorkExperience {
 
 const Description = ({ points }: { points: string[] }) => (
   <div className="flex flex-col gap-2 text-xs">
-    {points.map((p) => {
-      const id = useId()
-
-      return (
-        <div key={id} className="flex flex-row gap-2 items-start">
-          <span>{`<>`}</span>
-          <p>{p}</p>
-        </div>
-      )
-    })}
+    {points.map((p) => (
+      <div key={p} className="flex flex-row gap-2 items-start">
+        <span>{`<>`}</span>
+        <p>{p}</p>
+      </div>
+    ))}
   </div>
 )
 
