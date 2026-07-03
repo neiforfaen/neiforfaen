@@ -14,7 +14,7 @@ export const metadata: Metadata = createMetadata({
 
 export default function Page() {
   return (
-    <main className="flex flex-col gap-12">
+    <div className="flex flex-col gap-12">
       <About />
 
       <div className="flex flex-col gap-8 lg:flex-row">
@@ -24,6 +24,6 @@ export default function Page() {
       </div>
 
       <Writing />
-    </main>
+    </div>
   )
 }

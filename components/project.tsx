@@ -1,5 +1,6 @@
 "use client"
 
+import Link from "next/link"
 import posthog from "posthog-js"
 
 const projects: ProjectProps[] = [
@@ -59,5 +60,11 @@ export const ProjectList = () => (
         url={project.url}
       />
     ))}
+    <Link
+      className="ml-auto text-xs text-muted-foreground underline underline-offset-4"
+      href="/projects"
+    >
+      {"more projects ->"}
+    </Link>
   </section>
 )

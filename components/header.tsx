@@ -8,6 +8,7 @@ import { ThemeToggle } from "@/components/theme-toggle"
 export const Header = () => {
   const path = usePathname()
   const isWritingRoute = (path ?? "").includes("writing")
+  const isProjectsRoute = (path ?? "").includes("projects")
 
   return (
     <header className="flex flex-col gap-2 items-start sm:flex-row sm:justify-between sm:gap-0 sm:items-center">
@@ -28,6 +29,17 @@ export const Header = () => {
               href="/writing"
             >
               writing
+            </Link>
+          </>
+        )}
+        {isProjectsRoute && (
+          <>
+            <span>/</span>
+            <Link
+              className="font-medium text-foreground/75 underline underline-offset-4"
+              href="/projects"
+            >
+              projects
             </Link>
           </>
         )}

@@ -5,5 +5,5 @@ export default function WritingLayout({
 }: Readonly<{
   children: ReactNode
 }>) {
-  return <main className="flex flex-col gap-8 text-sm">{children}</main>
+  return <div className="flex flex-col gap-8 text-sm">{children}</div>
 }
