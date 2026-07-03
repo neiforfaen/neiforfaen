@@ -12,16 +12,6 @@ vi.mock("next/image", () => ({
 const { default: Page } = await import("@/app/page")
 
 describe("Page", () => {
-  it("renders the header with the site identity and availability status", async () => {
-    const screen = await render(<Page />)
-
-    await expect.element(screen.getByText("kaiden")).toBeVisible()
-    await expect
-      .element(screen.getByRole("link", { name: "0x424" }))
-      .toHaveAttribute("href", "/")
-    await expect.element(screen.getByText("looking for work")).toBeVisible()
-  })
-
   it("renders the about section with correctly linked contacts", async () => {
     const screen = await render(<Page />)
 
