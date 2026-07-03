@@ -34,7 +34,7 @@ export const About = () => (
           <Fragment key={label}>
             {showSeparator && <span>/</span>}
             <a
-              className="underline underline-offset-4"
+              className="underline underline-offset-4 cursor-target"
               href={url}
               target="_blank"
               rel="noopener noreferrer"

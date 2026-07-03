@@ -4,7 +4,7 @@ import type { Post } from "@/app/writing/posts"
 import { posts } from "@/app/writing/posts"
 
 export const PostItem = ({ post }: { post: Post }) => (
-  <div className="flex flex-col gap-2">
+  <div className="flex flex-col gap-2 cursor-target">
     <div className="flex justify-between items-center w-full">
       <h3 className="font-medium">{post.title}</h3>
       <span className="font-light text-muted-foreground text-xs">
