@@ -60,11 +60,13 @@ export const ProjectList = () => (
         url={project.url}
       />
     ))}
-    <Link
-      className="ml-auto text-xs text-muted-foreground underline underline-offset-4"
-      href="/projects"
-    >
-      {"more projects ->"}
-    </Link>
+    {process.env.NODE_ENV === "development" && (
+      <Link
+        className="ml-auto text-xs text-muted-foreground underline underline-offset-4"
+        href="/projects"
+      >
+        {"more projects ->"}
+      </Link>
+    )}
   </section>
 )
