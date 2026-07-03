@@ -60,12 +60,6 @@ describe("Page", () => {
       },
       {
         description:
-          "Knowledge base of my achievements, following Andrej Karpathy's LLM Wiki pattern.",
-        title: "neiforfaen/braglist-llm",
-        url: "https://github.com/neiforfaen/braglist-llm",
-      },
-      {
-        description:
           "Extensible local environment switcher for javascript/typescript projects.",
         title: "neiforfaen/kosei",
         url: "https://github.com/neiforfaen/kosei-cli",
