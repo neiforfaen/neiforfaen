@@ -19,6 +19,12 @@ const sitemap = (): MetadataRoute.Sitemap => [
     priority: 0.8,
     url: `${baseUrl}/writing`,
   },
+  {
+    changeFrequency: "weekly",
+    lastModified: new Date(),
+    priority: 0.8,
+    url: `${baseUrl}/projects`,
+  },
   ...posts.map((post) => ({
     changeFrequency: "monthly" as const,
     lastModified: new Date(),
