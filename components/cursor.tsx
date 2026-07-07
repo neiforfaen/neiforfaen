@@ -86,14 +86,12 @@ export const Cursor = ({
     if (typeof window === "undefined") {
       return false
     }
-    const hasTouchScreen =
-      "ontouchstart" in window || navigator.maxTouchPoints > 0
     const isSmallScreen = window.innerWidth <= 768
     const isMobileUserAgent =
       /android|webos|iphone|ipad|ipod|blackberry|iemobile|opera mini/iu.test(
         navigator.userAgent
       )
-    return (hasTouchScreen && isSmallScreen) || isMobileUserAgent
+    return isSmallScreen || isMobileUserAgent
   }, [])
 
   useEffect(() => {
