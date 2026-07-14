@@ -26,3 +26,6 @@ const nextConfig: NextConfig = {
 }
 
 export default createMDX()(nextConfig)
+
+import { initOpenNextCloudflareForDev } from "@opennextjs/cloudflare"
+initOpenNextCloudflareForDev()
