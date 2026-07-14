@@ -1,7 +1,7 @@
 "use client"
 
 import { animate, motion, useMotionValue, useSpring } from "motion/react"
-import { useEffect, useMemo, useRef } from "react"
+import { useEffect, useRef, useState } from "react"
 
 import { cn } from "@/lib/utils"
 
@@ -82,16 +82,18 @@ export const Cursor = ({
   const y = useSpring(rawY, { damping: 70, stiffness: 1000 })
   const scale = useMotionValue(1)
 
-  const isMobile = useMemo(() => {
-    if (typeof window === "undefined") {
-      return false
-    }
+  // null = not yet decided (server render + first client render). Deciding in
+  // an effect keeps the server HTML empty — a memo defaulting to false made
+  // SSR ship the cursor to every device and rely on hydration to remove it,
+  // which real iOS Safari doesn't reliably do.
+  const [isMobile, setIsMobile] = useState<boolean | null>(null)
+  useEffect(() => {
     const isSmallScreen = window.innerWidth <= 768
     const isMobileUserAgent =
       /android|webos|iphone|ipad|ipod|blackberry|iemobile|opera mini/iu.test(
         navigator.userAgent
       )
-    return isSmallScreen || isMobileUserAgent
+    setIsMobile(isSmallScreen || isMobileUserAgent)
   }, [])
 
   useEffect(() => {
@@ -132,11 +134,12 @@ export const Cursor = ({
     let containingBlock = getContainingBlock(cursor)
     const getOffset = () => getContainingBlockOffset(containingBlock)
 
+    // Rest at the viewport's top-left corner until the first mousemove.
     const initialOffset = getOffset()
-    rawX.jump(window.innerWidth / 2 - initialOffset.x)
-    rawY.jump(window.innerHeight / 2 - initialOffset.y)
-    x.jump(window.innerWidth / 2 - initialOffset.x)
-    y.jump(window.innerHeight / 2 - initialOffset.y)
+    rawX.jump(-initialOffset.x)
+    rawY.jump(-initialOffset.y)
+    x.jump(-initialOffset.x)
+    y.jump(-initialOffset.y)
 
     let activeTarget: Element | null = null
     let currentLeaveHandler: (() => void) | null = null
@@ -334,7 +337,7 @@ export const Cursor = ({
     scale,
   ])
 
-  if (isMobile) {
+  if (isMobile !== false) {
     return null
   }
 
