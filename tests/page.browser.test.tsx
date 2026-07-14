@@ -92,10 +92,7 @@ describe("Page", () => {
       .toBeVisible()
 
     await expect
-      .element(screen.getByText("Associate Engineer II", { exact: true }))
-      .toBeVisible()
-    await expect
-      .element(screen.getByText("Associate Engineer", { exact: true }))
+      .element(screen.getByText("Frontend Engineer", { exact: true }))
       .toBeVisible()
   })
 
@@ -113,7 +110,7 @@ describe("Page", () => {
     )
   })
 
-  it.only("opens and closes the experience dialog with the right details", async () => {
+  it("opens and closes the experience dialog with the right details", async () => {
     const screen = await render(<Page />)
 
     const experiences = [
