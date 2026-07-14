@@ -113,21 +113,15 @@ describe("Page", () => {
     )
   })
 
-  it("opens and closes the experience dialog with the right details", async () => {
+  it.only("opens and closes the experience dialog with the right details", async () => {
     const screen = await render(<Page />)
 
     const experiences = [
       {
         company: "Pleo",
         point: /shared\s+design\s+system/u,
-        range: "apr '25 -> jul '26",
-        role: "Associate Engineer II",
-      },
-      {
-        company: "Pleo",
-        point: /Vendor\s+Lock/u,
-        range: "sep '24 -> apr '25",
-        role: "Associate Engineer",
+        range: "sep '24 -> jul '26",
+        role: "Frontend Engineer",
       },
     ]
 

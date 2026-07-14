@@ -37,57 +37,37 @@ const Description = ({ points }: { points: string[] }) => (
   </div>
 )
 
-const associate2Points: string[] = [
-  `Contributed to components and documentation of the shared
-          design system beyond immediate team scope, improving consistency
-          across the product surface`,
-  `Built internal CLI tooling enabling engineers to switch between
-          development and staging environments with a single command, reducing
-          local setup friction and improving day-to-day dev experience`,
-  `Led the full project lifecycle for credit notes feature and
-          initiated a beta test to gather customer feedback during a controlled
-          rollout and iterated rapidly before releasing to the full user base`,
-  `Collaborated cross-functionally with product managers, designers, and
-          senior engineers to ship cohesive, well-tested features`,
-]
-
-const associatePoints: string[] = [
+const pleoPoints: string[] = [
   `Led feature development across React and React Native apps enabling
           users to self-serve missing merchants directly from the "Vendor Lock"
           feature, eliminating a category of support request and reducing
           related CS tickets by ~80%`,
-  `Bridged customer pain points and
-          technical solutions end-to-end: scoping, building, and shipping across
-          both surfaces as a first-year engineer`,
-  `Promoted to Associate
-          Engineer II after 7 months on the strength of this project`,
+  `Led the full project lifecycle for credit notes feature and
+          initiated a beta test to gather customer feedback during a controlled
+          rollout and iterated rapidly before releasing to the full user base`,
+  `Built internal CLI tooling enabling engineers to switch between
+          development and staging environments with a single command, reducing
+          local setup friction and improving day-to-day dev experience`,
+  `Contributed to components and documentation of the shared
+          design system beyond immediate team scope, improving consistency
+          across the product surface`,
+  `Collaborated cross-functionally with product managers, designers, and
+          senior engineers to ship cohesive, well-tested features`,
 ]
 
 const experience: WorkExperience[] = [
   {
     company: "Pleo",
-    description: <Description points={associate2Points} />,
+    description: <Description points={pleoPoints} />,
     end: "jul '26",
     highlights: [
+      "Cut related support tickets ~80% with a self-serve feature",
       "Led the credit notes feature from beta to full rollout",
       "Built CLI tooling for one-command environment switching",
       "Shipped design system components used across the product",
     ],
     logoSrc: pleoLogo,
-    role: "Associate Engineer II",
-    start: "apr '25",
-  },
-  {
-    company: "Pleo",
-    description: <Description points={associatePoints} />,
-    end: "apr '25",
-    highlights: [
-      "Cut related support tickets ~80% with a self-serve feature",
-      "Shipped it end-to-end across React and React Native apps",
-      "Promoted to Associate Engineer II after 7 months",
-    ],
-    logoSrc: pleoLogo,
-    role: "Associate Engineer",
+    role: "Frontend Engineer",
     start: "sep '24",
   },
 ]
