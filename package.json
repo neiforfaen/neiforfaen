@@ -45,7 +45,7 @@
     "oxfmt": "0.55.0",
     "oxlint": "1.70.0",
     "oxlint-tsgolint": "0.23.0",
-    "shadcn": "4.11.0",
+    "shadcn": "4.14.1",
     "tailwindcss": "4.3.1",
     "typescript": "6.0.3",
     "ultracite": "7.8.3",
