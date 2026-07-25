@@ -7,11 +7,13 @@
   "type": "module",
   "scripts": {
     "fmt": "oxfmt --write",
-    "lint": "oxlint && oxfmt --check"
+    "lint": "oxlint && oxfmt --check",
+    "prepare": "lefthook install"
   },
   "devDependencies": {
     "@types/bun": "latest",
     "@types/node": "^26.1.1",
+    "lefthook": "2.1.9",
     "oxfmt": "^0.60.0",
     "oxlint": "^1.75.0"
   },
