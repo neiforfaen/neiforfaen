@@ -1,0 +1,147 @@
+"use client"
+
+import Image from "next/image"
+import type { StaticImageData } from "next/image"
+import posthog from "posthog-js"
+import type { ReactElement } from "react"
+
+import pleoLogo from "@/assets/pleo-logo.webp"
+
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "./ui/dialog"
+
+interface WorkExperience {
+  company: string
+  start: string
+  end?: string
+  role: string
+  highlights: string[]
+  logoSrc: StaticImageData
+  description: ReactElement
+}
+
+const Description = ({ points }: { points: string[] }) => (
+  <div className="flex flex-col gap-2 text-xs">
+    {points.map((p) => (
+      <div key={p} className="flex flex-row gap-2 items-start">
+        <span>{`<>`}</span>
+        <p>{p}</p>
+      </div>
+    ))}
+  </div>
+)
+
+const pleoPoints: string[] = [
+  `Led feature development across React and React Native apps enabling
+          users to self-serve missing merchants directly from the "Vendor Lock"
+          feature, eliminating a category of support request and reducing
+          related CS tickets by ~80%`,
+  `Led the full project lifecycle for credit notes feature and
+          initiated a beta test to gather customer feedback during a controlled
+          rollout and iterated rapidly before releasing to the full user base`,
+  `Built internal CLI tooling enabling engineers to switch between
+          development and staging environments with a single command, reducing
+          local setup friction and improving day-to-day dev experience`,
+  `Contributed to components and documentation of the shared
+          design system beyond immediate team scope, improving consistency
+          across the product surface`,
+  `Collaborated cross-functionally with product managers, designers, and
+          senior engineers to ship cohesive, well-tested features`,
+]
+
+const experience: WorkExperience[] = [
+  {
+    company: "Pleo",
+    description: <Description points={pleoPoints} />,
+    end: "jul '26",
+    highlights: [
+      "Cut related support tickets ~80% with a self-serve feature",
+      "Led the credit notes feature from beta to full rollout",
+      "Built CLI tooling for one-command environment switching",
+      "Shipped design system components used across the product",
+    ],
+    logoSrc: pleoLogo,
+    role: "Frontend Engineer",
+    start: "sep '24",
+  },
+]
+
+const WorkItem = ({
+  item,
+  ...props
+}: { item: WorkExperience } & React.HTMLAttributes<HTMLDivElement>) => (
+  <div {...props} className="grid grid-cols-[48px_1fr] gap-4 cursor-target">
+    <div className="flex aspect-square w-12 sm:w-full translate-y-0.5 items-center justify-center border text-foreground">
+      <Image
+        className="border-transparent"
+        src={item.logoSrc}
+        width={24}
+        height={24}
+        alt="logo"
+        quality={100}
+      />
+    </div>
+
+    <div className="flex flex-col gap-0.5 text-sm">
+      <div className="flex justify-between items-center w-full">
+        <span className="font-medium">{item.company}</span>
+        <span className="font-light text-muted-foreground text-xs">
+          {`${item.start} -> ${item.end}`}
+        </span>
+      </div>
+
+      <span className="font-light text-foreground text-sm">{item.role}</span>
+      <div className="flex flex-col gap-1 text-xs text-muted-foreground">
+        {item.highlights.map((h) => (
+          <span key={h}>{h}</span>
+        ))}
+      </div>
+    </div>
+  </div>
+)
+
+export const Work = () => (
+  <section className="flex flex-col">
+    <div className="flex flex-row justify-between items-center pb-2">
+      <h2 className="text-lg font-medium">experience</h2>
+      <span className="text-xs text-muted-foreground">
+        [click a role for more details]
+      </span>
+    </div>
+
+    <div className="flex flex-col gap-4">
+      {experience.map((we) => (
+        <Dialog
+          key={`${we.company}-${we.role.split(" ").join("-")}`}
+          onOpenChange={(open) => {
+            if (open) {
+              posthog.capture("work_experience_opened", {
+                company: we.company,
+                role: we.role,
+              })
+            }
+          }}
+        >
+          <DialogTrigger nativeButton={false} render={<WorkItem item={we} />} />
+          <DialogContent>
+            <DialogHeader>
+              <DialogTitle>{`${we.role} @ ${we.company}`}</DialogTitle>
+              <DialogDescription>
+                {`${we.start} -> ${we.end}`}
+              </DialogDescription>
+            </DialogHeader>
+            <div className="border border-muted-foreground p-2">
+              {we.description}
+            </div>
+          </DialogContent>
+        </Dialog>
+      ))}
+    </div>
+  </section>
+)

@@ -13,6 +13,8 @@ export default defineConfig({
     "**/.vite",
     "**/bun.lock",
     "**/bun.lockb",
+    "**/apps/web/components/ui",
+    "**/worker-configuration.d.ts",
   ],
   jsxSingleQuote: false,
   printWidth: 80,
