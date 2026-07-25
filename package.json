@@ -1,6 +1,9 @@
 {
   "name": "neiforfaen",
   "private": true,
+  "workspaces": [
+    "apps/*"
+  ],
   "type": "module",
   "scripts": {
     "fmt": "oxfmt --write",
