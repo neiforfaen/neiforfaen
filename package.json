@@ -1,0 +1,18 @@
+{
+  "name": "neiforfaen",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "fmt": "oxfmt --write",
+    "lint": "oxlint && oxfmt --check"
+  },
+  "devDependencies": {
+    "@types/bun": "latest",
+    "@types/node": "^26.1.1",
+    "oxfmt": "^0.60.0",
+    "oxlint": "^1.75.0"
+  },
+  "peerDependencies": {
+    "typescript": "^6"
+  }
+}

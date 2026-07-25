@@ -1,0 +1,164 @@
+{
+  "neiforfaen/neiforfaen": {
+    "historyCount": 78,
+    "additions": 7595,
+    "deletions": 22511,
+    "myCommits": 50
+  },
+  "neiforfaen/website-old": {
+    "historyCount": 34,
+    "additions": 0,
+    "deletions": 0,
+    "myCommits": 0
+  },
+  "neiforfaen/dotfiles": {
+    "historyCount": 19,
+    "additions": 0,
+    "deletions": 0,
+    "myCommits": 0
+  },
+  "neiforfaen/portfolio": {
+    "historyCount": 161,
+    "additions": 0,
+    "deletions": 0,
+    "myCommits": 0
+  },
+  "neiforfaen/raiu": {
+    "historyCount": 5,
+    "additions": 0,
+    "deletions": 0,
+    "myCommits": 0
+  },
+  "neiforfaen/orbit": {
+    "historyCount": 10,
+    "additions": 0,
+    "deletions": 0,
+    "myCommits": 0
+  },
+  "neiforfaen/kosei-cli": {
+    "historyCount": 50,
+    "additions": 0,
+    "deletions": 0,
+    "myCommits": 0
+  },
+  "neiforfaen/arcus": {
+    "additions": 0,
+    "deletions": 0,
+    "historyCount": 0,
+    "myCommits": 0
+  },
+  "neiforfaen/pkgr": {
+    "historyCount": 14,
+    "additions": 0,
+    "deletions": 0,
+    "myCommits": 0
+  },
+  "neiforfaen/pleo-fe-ctx-graph": {
+    "historyCount": 58,
+    "additions": 0,
+    "deletions": 0,
+    "myCommits": 0
+  },
+  "neiforfaen/.dotfiles": {
+    "historyCount": 8,
+    "additions": 51,
+    "deletions": 31,
+    "myCommits": 1
+  },
+  "neiforfaen/goji": {
+    "historyCount": 7,
+    "additions": 0,
+    "deletions": 0,
+    "myCommits": 0
+  },
+  "neiforfaen/website": {
+    "historyCount": 8,
+    "additions": 0,
+    "deletions": 0,
+    "myCommits": 0
+  },
+  "neiforfaen/nutro": {
+    "historyCount": 2,
+    "additions": 0,
+    "deletions": 0,
+    "myCommits": 0
+  },
+  "neiforfaen/nff": {
+    "historyCount": 26,
+    "additions": 5127,
+    "deletions": 279,
+    "myCommits": 26
+  },
+  "neiforfaen/oss-pulse": {
+    "additions": 0,
+    "deletions": 0,
+    "historyCount": 0,
+    "myCommits": 0
+  },
+  "neiforfaen/braglist-llm": {
+    "historyCount": 3,
+    "additions": 726,
+    "deletions": 2,
+    "myCommits": 3
+  },
+  "neiforfaen/shio": {
+    "historyCount": 98,
+    "additions": 7010,
+    "deletions": 289,
+    "myCommits": 15
+  },
+  "neiforfaen/apex": {
+    "historyCount": 4,
+    "additions": 17556,
+    "deletions": 28,
+    "myCommits": 4
+  },
+  "neiforfaen/itty.dev": {
+    "historyCount": 234,
+    "additions": 1,
+    "deletions": 1,
+    "myCommits": 1
+  },
+  "neiforfaen/itty-cache": {
+    "historyCount": 8,
+    "additions": 5995,
+    "deletions": 1050,
+    "myCommits": 8
+  },
+  "neiforfaen/ai-job-search": {
+    "historyCount": 19,
+    "additions": 0,
+    "deletions": 0,
+    "myCommits": 0
+  },
+  "neiforfaen/react-interview-prac": {
+    "historyCount": 3,
+    "additions": 3970,
+    "deletions": 219,
+    "myCommits": 3
+  },
+  "neiforfaen/xeeno.app": {
+    "historyCount": 12,
+    "additions": 9189,
+    "deletions": 486,
+    "myCommits": 12
+  },
+  "neiforfaen/ai-job-scraper": {
+    "historyCount": 3,
+    "additions": 0,
+    "deletions": 0,
+    "myCommits": 0
+  },
+  "neiforfaen/cs50x": {
+    "additions": 0,
+    "deletions": 0,
+    "historyCount": 0,
+    "myCommits": 0
+  },
+  "neiforfaen/fm-prac": {
+    "historyCount": 3,
+    "additions": 4226,
+    "deletions": 23,
+    "myCommits": 3
+  }
+}
