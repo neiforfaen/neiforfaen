@@ -1,0 +1,12 @@
+@import "tailwindcss";
+
+* {
+  @apply box-border antialiased;
+}
+
+:root {
+  --accent-text: rgba(11, 11, 10, 0.54);
+  --primary-text: #262626;
+  --border: rgba(11, 11, 10, 0.16);
+  --meta: rgba(11, 11, 10, 0.42);
+}

@@ -15,6 +15,7 @@ export default defineConfig({
     "**/bun.lockb",
     "**/apps/web/components/ui",
     "**/worker-configuration.d.ts",
+    "**/routeTree.gen.ts",
   ],
   jsxSingleQuote: false,
   printWidth: 80,
