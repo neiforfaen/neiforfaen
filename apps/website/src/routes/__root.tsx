@@ -1,9 +1,14 @@
 import { Outlet, createRootRoute } from "@tanstack/react-router"
 
+import { Nav } from "../components/nav"
+
 const RootComponent = () => (
-  <main className="h-svh w-full">
-    <Outlet />
-  </main>
+  <>
+    <Nav />
+    <main className="h-svh w-full">
+      <Outlet />
+    </main>
+  </>
 )
 
 export const Route = createRootRoute({
