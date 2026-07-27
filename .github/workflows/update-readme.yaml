@@ -26,7 +26,7 @@ jobs:
       - name: Run update script
         env:
           ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
-        run: bun run ./readme/update.ts
+        run: bun run ./scripts/readme/update-readme.ts
 
       - run: |-
           git add .
