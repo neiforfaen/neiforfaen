@@ -23,6 +23,6 @@
     "noUnusedParameters": false,
     "noPropertyAccessFromIndexSignature": false
   },
-  "include": ["readme/update.ts"],
+  "include": ["scripts/readme/update-readme.ts"],
   "exclude": ["node_modules"]
 }
