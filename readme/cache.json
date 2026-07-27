@@ -1,6 +1,6 @@
 {
   "neiforfaen/neiforfaen": {
-    "historyCount": 86,
+    "historyCount": 87,
     "additions": 31514,
     "deletions": 22571,
     "myCommits": 55
@@ -162,9 +162,9 @@
     "myCommits": 3
   },
   "neiforfaen/k": {
-    "historyCount": 32,
-    "additions": 3363,
-    "deletions": 714,
-    "myCommits": 32
+    "historyCount": 50,
+    "additions": 4866,
+    "deletions": 760,
+    "myCommits": 50
   }
 }
