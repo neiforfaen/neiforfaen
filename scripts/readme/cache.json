@@ -1,6 +1,6 @@
 {
   "neiforfaen/neiforfaen": {
-    "historyCount": 98,
+    "historyCount": 99,
     "additions": 31532,
     "deletions": 22592,
     "myCommits": 60
@@ -36,7 +36,7 @@
     "myCommits": 0
   },
   "neiforfaen/kosei-cli": {
-    "historyCount": 50,
+    "historyCount": 56,
     "additions": 0,
     "deletions": 0,
     "myCommits": 0
@@ -102,7 +102,7 @@
     "myCommits": 3
   },
   "neiforfaen/shio": {
-    "historyCount": 122,
+    "historyCount": 123,
     "additions": 7010,
     "deletions": 289,
     "myCommits": 15
